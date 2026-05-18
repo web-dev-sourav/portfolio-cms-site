@@ -33,18 +33,29 @@
     setText('[data-cms="site.copyrightText"]', s.copyrightText);
     setText('[data-cms="site.footerTagline"]', s.footerTagline);
 
-    // Logo — image or initials
+    // Page loader logo
+    const initials = s.initials || 'AM';
+    document.querySelectorAll('.loader-logo').forEach(el => {
+      el.textContent = initials + '.';
+    });
+
+    // Nav logo — image or initials
     document.querySelectorAll('.nav-logo').forEach(el => {
       if (s.logoImage) {
         el.innerHTML = `<img src="${s.logoImage}" style="height:32px;vertical-align:middle;" alt="${name}" />`;
       } else {
-        el.innerHTML = (s.initials || 'AM') + '<span>.</span>';
+        el.innerHTML = initials + '<span>.</span>';
       }
     });
 
-    // Footer logos
+    // Footer logo (full name)
     document.querySelectorAll('.footer-logo').forEach(el => {
       el.textContent = name + '.';
+    });
+
+    // Hero dashboard card avatar
+    document.querySelectorAll('.card-avatar').forEach(el => {
+      el.textContent = initials;
     });
 
     // Availability badge
