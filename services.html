@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services — Alex Morgan | META Ads & Ecommerce</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <style>
+    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .pricing-card { background: var(--dark-3); border: 1px solid var(--glass-border); border-radius: var(--radius-lg); padding: 40px; transition: var(--transition); position: relative; overflow: hidden; }
+    .pricing-card.featured { border-color: var(--primary); box-shadow: var(--shadow-glow); }
+    .pricing-card.featured::before { content: 'Most Popular'; position: absolute; top: 20px; right: -30px; background: var(--gradient-1); color: #fff; font-size: 0.72rem; font-weight: 700; padding: 6px 40px; transform: rotate(45deg); letter-spacing: 1px; }
+    .pricing-card:hover { transform: translateY(-6px); }
+    .pricing-name { font-size: 1rem; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem; }
+    .pricing-price { font-size: 3rem; font-weight: 900; letter-spacing: -2px; line-height: 1; margin-bottom: 0.5rem; }
+    .pricing-price sub { font-size: 1rem; font-weight: 500; color: var(--text-muted); }
+    .pricing-period { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 2rem; }
+    .pricing-features { list-style: none; margin-bottom: 2.5rem; }
+    .pricing-features li { display: flex; align-items: flex-start; gap: 10px; padding: 10px 0; font-size: 0.9rem; color: var(--text-secondary); border-bottom: 1px solid var(--glass-border); }
+    .pricing-features li:last-child { border-bottom: none; }
+    .pricing-features li .check { color: #22C55E; font-weight: 700; flex-shrink: 0; }
+    .pricing-features li .cross { color: var(--text-muted); flex-shrink: 0; }
+    .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+    .platform-card { background: var(--glass); border: 1px solid var(--glass-border); border-radius: var(--radius); padding: 24px; text-align: center; transition: var(--transition); }
+    .platform-card:hover { border-color: rgba(6,104,225,0.3); transform: translateY(-4px); }
+    .platform-icon { font-size: 2.5rem; margin-bottom: 12px; }
+    .platform-name { font-size: 0.9rem; font-weight: 700; margin-bottom: 4px; }
+    .platform-desc { font-size: 0.78rem; color: var(--text-muted); }
+    .faq-item { border-bottom: 1px solid var(--glass-border); }
+    .faq-question { width: 100%; background: transparent; color: var(--text-primary); font-family: inherit; font-size: 1rem; font-weight: 600; padding: 20px 0; display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-align: left; }
+    .faq-arrow { transition: transform 0.3s ease; font-size: 1.2rem; color: var(--text-muted); }
+    .faq-item.open .faq-arrow { transform: rotate(45deg); color: var(--primary); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s ease; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.8; }
+    .faq-item.open .faq-answer { max-height: 200px; padding-bottom: 20px; }
+    @media (max-width: 900px) { .pricing-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<div id="pageLoader" class="page-loader">
+  <div class="loader-logo">AM.</div>
+  <div class="loader-bar-wrapper"><div class="loader-bar"></div></div>
+</div>
+
+<div id="cursorDot" class="cursor-dot"></div>
+<div id="cursorRing" class="cursor-ring"></div>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">AM<span>.</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="case-study.html">Case Studies</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="nav-cta">Let's Talk</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-glow"></div>
+  <div class="particles-bg"></div>
+  <div class="container">
+    <div class="section-badge" style="justify-content: center; display: inline-flex; margin-bottom: 1.5rem;">⚡ Services</div>
+    <h1 class="page-hero-title hero-animate-1">Everything You Need to<br><span class="animated-gradient">Dominate META Ads</span></h1>
+    <p class="page-hero-subtitle hero-animate-2">Performance-driven services built specifically for ecommerce brands ready to scale profitably.</p>
+    <div class="hero-animate-3">
+      <a href="contact.html" class="btn-primary">Get a Free Audit</a>
+    </div>
+  </div>
+</div>
+
+<!-- CORE SERVICES DETAIL -->
+<section>
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge reveal">🎯 Core Services</div>
+      <h2 class="section-title reveal delay-1">What's <span>Included</span></h2>
+    </div>
+
+    <!-- Service Detail Cards -->
+    <div style="display: flex; flex-direction: column; gap: 2rem;">
+
+      <!-- Service 1 -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; padding: 3rem; background: var(--dark-3); border: 1px solid var(--glass-border); border-radius: var(--radius-lg);" class="reveal">
+        <div>
+          <div class="service-icon blue" style="margin-bottom: 1.5rem;">📘</div>
+          <h3 style="font-size: 1.6rem; font-weight: 800; margin-bottom: 1rem;">META Ads Management</h3>
+          <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.5rem;">Full-service management of your Facebook and Instagram advertising — from account structure and audience targeting to creative testing and budget scaling. I handle everything so you can focus on running your business.</p>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <div style="display: flex; gap: 10px; align-items: center; font-size: 0.9rem; color: var(--text-secondary);"><span style="color: #22C55E;">✓</span> Campaign structure & architecture</div>
+            <div style="display: flex; gap: 10px; align-items: center; font-size: 0.9rem; color: var(--text-secondary);"><span style="color: #22C55E;">✓</span> Custom & Lookalike audience building</div>
+            <div style="display: flex; gap: 10px; align-items: center; font-size: 0.9rem; color: var(--text-secondary);"><span style="color: #22C55E;">✓</span> Creative performance testing</div>
+            <div style="display: flex; gap: 10px; align-items: center; font-size: 0.9rem; color: var(--text-secondary);"><span style="color: #22C55E;">✓</span> Budget management & scaling</div>
+            <div style="display: flex; gap: 10px; align-items: center; font-size: 0.9rem; color: var(--text-secondary);"><span style="color: #22C55E;">✓</span> Retargeting & remarketing funnels</div>
+          </div>
+        </div>
+        <div style="background: var(--dark-4); border-radius: var(--radius); padding: 24px; border: 1px solid var(--glass-border);">
+          <div style="font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 1.5rem;">Average Client Results</div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+            <div style="text-align: center; padding: 20px; background: var(--dark-3); border-radius: var(--radius);">
+              <div style="font-size: 2rem; font-weight: 900; color: #22C55E;">3.8x</div>
+              <div style="font-size: 0.72rem; color: var(--text-muted);">Average ROAS</div>
+            </div>
+            <div style="text-align: center; padding: 20px; background: var(--dark-3); border-radius: var(--radius);">
+              <div style="font-size: 2rem; font-weight: 900; color: var(--primary-light);">-42%</div>
+              <div style="font-size: 0.72rem; color: var(--text-muted);">CPA Reduction</div>
+            </div>
+            <div style="text-align: center; padding: 20px; background: var(--dark-3); border-radius: var(--radius);">
+              <div style="font-size: 2rem; font-weight: 900; color: #A78BFA;">+187%</div>
+              <div style="font-size: 0.72rem; color: var(--text-muted);">Revenue Growth</div>
+            </div>
+            <div style="text-align: center; padding: 20px; background: var(--dark-3); border-radius: var(--radius);">
+              <div style="font-size: 2rem; font-weight: 900; color: var(--accent);">90 days</div>
+              <div style="font-size: 0.72rem; color: var(--text-muted);">To Profitability</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 2 -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; padding: 3rem; background: var(--dark-3); border: 1px solid var(--glass-border); border-radius: var(--radius-lg);" class="reveal">
+        <div style="background: var(--dark-4); border-radius: var(--radius); padding: 24px; border: 1px solid var(--glass-border); order: -1;">
+          <div style="font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 1rem;">Creative Testing Framework</div>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <div style="background: var(--dark-3); border-radius: 8px; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 0.85rem;">Hook Variation A</span>
+              <span style="color: #22C55E; font-size: 0.85rem; font-weight: 700;">3.2% CTR ↑</span>
+            </div>
+            <div style="background: var(--dark-3); border-radius: 8px; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center; border: 1px solid rgba(6,104,225,0.3);">
+              <span style="font-size: 0.85rem;">Hook Variation B ⭐</span>
+              <span style="color: var(--accent); font-size: 0.85rem; font-weight: 700;">5.7% CTR ✓</span>
+            </div>
+            <div style="background: var(--dark-3); border-radius: 8px; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 0.85rem;">Hook Variation C</span>
+              <span style="color: #EF4444; font-size: 0.85rem; font-weight: 700;">1.8% CTR ↓</span>
+            </div>
+            <div style="background: var(--dark-3); border-radius: 8px; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 0.85rem;">Body Copy Test</span>
+              <span style="color: var(--primary-light); font-size: 0.85rem; font-weight: 700;">Testing...</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="service-icon pink" style="margin-bottom: 1.5rem;">🎨</div>
+          <h3 style="font-size: 1.6rem; font-weight: 800; margin-bottom: 1rem;">Creative Strategy & Testing</h3>
+          <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.5rem;">Great targeting means nothing without creative that converts. I build systematic testing frameworks to identify your best-performing hooks, formats, and messaging — then scale what wins.</p>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <div style="display: flex; gap: 10px; align-items: center; font-size: 0.9rem; color: var(--text-secondary);"><span style="color: #22C55E;">✓</span> Hook testing frameworks</div>
+            <div style="display: flex; gap: 10px; align-items: center; font-size: 0.9rem; color: var(--text-secondary);"><span style="color: #22C55E;">✓</span> UGC ad direction & briefs</div>
+            <div style="display: flex; gap: 10px; align-items: center; font-size: 0.9rem; color: var(--text-secondary);"><span style="color: #22C55E;">✓</span> Video ad strategy</div>
+            <div style="display: flex; gap: 10px; align-items: center; font-size: 0.9rem; color: var(--text-secondary);"><span style="color: #22C55E;">✓</span> Static & carousel ad copy</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORMS -->
+<section style="background: var(--dark-2);">
+  <div class="container">
+    <div class="section-header center">
+      <div class="section-badge reveal">🌐 Platforms</div>
+      <h2 class="section-title reveal delay-1">Every <span>META Platform</span> Covered</h2>
+    </div>
+    <div class="platform-grid">
+      <div class="platform-card reveal delay-1">
+        <div class="platform-icon">📘</div>
+        <div class="platform-name">Facebook Ads</div>
+        <div class="platform-desc">Feed, Stories, Reels & Marketplace</div>
+      </div>
+      <div class="platform-card reveal delay-2">
+        <div class="platform-icon">📸</div>
+        <div class="platform-name">Instagram Ads</div>
+        <div class="platform-desc">Feed, Stories, Explore & Reels</div>
+      </div>
+      <div class="platform-card reveal delay-3">
+        <div class="platform-icon">💬</div>
+        <div class="platform-name">Messenger Ads</div>
+        <div class="platform-desc">Sponsored messages & click-to-chat</div>
+      </div>
+      <div class="platform-card reveal delay-4">
+        <div class="platform-icon">🎯</div>
+        <div class="platform-name">Audience Network</div>
+        <div class="platform-desc">Extended reach across META network</div>
+      </div>
+      <div class="platform-card reveal delay-5">
+        <div class="platform-icon">🛍️</div>
+        <div class="platform-name">META Shopping</div>
+        <div class="platform-desc">Catalog & dynamic product ads</div>
+      </div>
+      <div class="platform-card reveal delay-6">
+        <div class="platform-icon">🤖</div>
+        <div class="platform-name">Advantage+</div>
+        <div class="platform-desc">AI-powered shopping campaigns</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section>
+  <div class="container">
+    <div class="section-header center">
+      <div class="section-badge reveal">💰 Investment</div>
+      <h2 class="section-title reveal delay-1">Simple, Transparent <span>Pricing</span></h2>
+      <p class="section-subtitle reveal delay-2">No hidden fees. No long-term lock-ins. Just results-focused partnerships.</p>
+    </div>
+    <div class="pricing-grid" data-cms-list="pricing">
+      <div class="pricing-card reveal delay-1">
+        <div class="pricing-name">Starter</div>
+        <div class="pricing-price">$1,500<sub>/mo</sub></div>
+        <div class="pricing-period">Best for brands spending $5K–$20K/mo on ads</div>
+        <ul class="pricing-features">
+          <li><span class="check">✓</span> META Ads Management</li>
+          <li><span class="check">✓</span> 1 Ad Account</li>
+          <li><span class="check">✓</span> Monthly Strategy Call</li>
+          <li><span class="check">✓</span> Weekly Performance Reports</li>
+          <li><span class="check">✓</span> Creative Recommendations</li>
+          <li><span class="cross">–</span> Creative Production</li>
+          <li><span class="cross">–</span> Dedicated Slack Channel</li>
+          <li><span class="cross">–</span> CRO Consultation</li>
+        </ul>
+        <a href="contact.html" class="btn-secondary" style="display: block; text-align: center;">Get Started</a>
+      </div>
+      <div class="pricing-card featured reveal delay-2">
+        <div class="pricing-name" style="color: var(--primary-light);">Growth</div>
+        <div class="pricing-price" style="background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">$3,000<sub style="color: var(--text-muted);">/mo</sub></div>
+        <div class="pricing-period">Best for brands spending $20K–$100K/mo on ads</div>
+        <ul class="pricing-features">
+          <li><span class="check">✓</span> Full META Ads Management</li>
+          <li><span class="check">✓</span> Up to 3 Ad Accounts</li>
+          <li><span class="check">✓</span> Bi-weekly Strategy Calls</li>
+          <li><span class="check">✓</span> Weekly Performance Reports</li>
+          <li><span class="check">✓</span> Creative Strategy & Briefs</li>
+          <li><span class="check">✓</span> Creative Direction</li>
+          <li><span class="check">✓</span> Dedicated Slack Channel</li>
+          <li><span class="cross">–</span> CRO Consultation</li>
+        </ul>
+        <a href="contact.html" class="btn-primary" style="display: block; text-align: center;">Most Popular →</a>
+      </div>
+      <div class="pricing-card reveal delay-3">
+        <div class="pricing-name">Scale</div>
+        <div class="pricing-price">$6,000<sub>/mo</sub></div>
+        <div class="pricing-period">Best for brands spending $100K+/mo on ads</div>
+        <ul class="pricing-features">
+          <li><span class="check">✓</span> Full META Ads Management</li>
+          <li><span class="check">✓</span> Unlimited Ad Accounts</li>
+          <li><span class="check">✓</span> Weekly Strategy Calls</li>
+          <li><span class="check">✓</span> Daily Performance Dashboards</li>
+          <li><span class="check">✓</span> Complete Creative Production</li>
+          <li><span class="check">✓</span> Creative Direction & UGC</li>
+          <li><span class="check">✓</span> Dedicated Slack + Phone</li>
+          <li><span class="check">✓</span> CRO & Landing Page Consulting</li>
+        </ul>
+        <a href="contact.html" class="btn-secondary" style="display: block; text-align: center;">Let's Talk</a>
+      </div>
+    </div>
+    <p style="text-align: center; margin-top: 2rem; color: var(--text-muted); font-size: 0.85rem;">All plans include a 30-day money-back guarantee. Prices in USD.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="background: var(--dark-2);">
+  <div class="container">
+    <div class="section-header center">
+      <div class="section-badge reveal">❓ FAQ</div>
+      <h2 class="section-title reveal delay-1">Common <span>Questions</span></h2>
+    </div>
+    <div style="max-width: 720px; margin: 0 auto;" class="reveal">
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          How quickly will I see results?
+          <span class="faq-arrow">+</span>
+        </button>
+        <div class="faq-answer">Most clients see meaningful improvement in ROAS within the first 30 days. Significant revenue growth typically happens between 60–90 days as we build data and optimize winning campaigns at scale.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What ad spend do I need to start?
+          <span class="faq-arrow">+</span>
+        </button>
+        <div class="faq-answer">I recommend a minimum of $5,000/month in ad spend to generate enough data for meaningful testing and optimization. Clients with $10K+ in monthly ad budget see the fastest results.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Do you work with any industry?
+          <span class="faq-arrow">+</span>
+        </button>
+        <div class="faq-answer">I specialize in ecommerce — specifically DTC brands in fashion, beauty, health & wellness, home goods, and fitness. I do not work with gambling, adult content, or regulated financial products.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What if I'm not happy with the results?
+          <span class="faq-arrow">+</span>
+        </button>
+        <div class="faq-answer">All engagements include a 30-day satisfaction guarantee. If you're not seeing progress after the first 30 days, you get a full refund, no questions asked.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Will you have access to my ad account?
+          <span class="faq-arrow">+</span>
+        </button>
+        <div class="faq-answer">Yes — I need Partner access to your META Business Manager to manage campaigns. You retain full ownership at all times. I only request the permissions needed to do the work.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section>
+  <div class="container">
+    <div class="cta-section reveal">
+      <h2 class="cta-title">Ready to <span class="animated-gradient">Scale With META?</span></h2>
+      <p class="cta-subtitle">Book a free 30-minute audit call and I'll show you exactly how to grow your ecommerce brand with META ads.</p>
+      <a href="contact.html" class="btn-primary">📅 Book Free Audit Call</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">Alex Morgan.</div>
+        <p class="footer-tagline">META Ads specialist helping ecommerce brands turn ad spend into scalable, predictable revenue.</p>
+      </div>
+      <div>
+        <div class="footer-heading">Navigation</div>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li><li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">Services</div>
+        <ul class="footer-links">
+          <li><a href="#">META Ads Management</a></li><li><a href="#">Creative Strategy</a></li>
+          <li><a href="#">ROAS Optimization</a></li><li><a href="#">Analytics</a></li>
+        </ul>
+      </div>
+      <div class="footer-newsletter">
+        <div class="footer-heading">Newsletter</div>
+        <p>Get META ads tips delivered every Tuesday.</p>
+        <form class="newsletter-form" onsubmit="return false;">
+          <input type="email" class="newsletter-input" placeholder="your@email.com" />
+          <button class="newsletter-btn" type="submit">→</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Alex Morgan. All rights reserved.</span>
+      <span>Built for performance. Designed to convert.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/content-loader.js"></script>
+<script>
+function toggleFaq(btn) {
+  const item = btn.parentElement;
+  item.classList.toggle('open');
+}
+</script>
+</body>
+</html>

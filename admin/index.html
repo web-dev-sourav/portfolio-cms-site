@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard — Portfolio CMS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body>
+
+<!-- LOGIN SCREEN -->
+<div id="loginScreen" class="login-screen" style="display:none;">
+  <div class="login-box">
+    <div class="login-logo">Portfolio CMS</div>
+    <p class="login-subtitle">Admin Dashboard — Sign in to continue</p>
+    <form id="loginForm">
+      <label class="login-label">Password</label>
+      <input type="password" id="loginPw" class="login-input" placeholder="Enter admin password" autofocus />
+      <button type="submit" class="login-btn">Sign In →</button>
+      <div id="loginError" class="login-error"></div>
+    </form>
+  </div>
+</div>
+
+<!-- MAIN APP -->
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <div class="brand-logo">CMS</div>
+      <div class="brand-label">Portfolio Admin</div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="nav-group">
+        <div class="nav-group-label">Overview</div>
+        <div class="nav-item active" data-section="dashboard">
+          <span class="nav-icon">🏠</span> Dashboard
+        </div>
+      </div>
+
+      <div class="nav-group">
+        <div class="nav-group-label">Global</div>
+        <div class="nav-item" data-section="site">
+          <span class="nav-icon">⚙️</span> Site Settings
+        </div>
+        <div class="nav-item" data-section="images">
+          <span class="nav-icon">🖼️</span> Images
+        </div>
+      </div>
+
+      <div class="nav-group">
+        <div class="nav-group-label">Homepage</div>
+        <div class="nav-item" data-section="hero">
+          <span class="nav-icon">🦸</span> Hero Section
+        </div>
+        <div class="nav-item" data-section="services">
+          <span class="nav-icon">⚡</span> Services
+        </div>
+        <div class="nav-item" data-section="testimonials">
+          <span class="nav-icon">💬</span> Testimonials
+        </div>
+        <div class="nav-item" data-section="process">
+          <span class="nav-icon">🔄</span> Process Steps
+        </div>
+      </div>
+
+      <div class="nav-group">
+        <div class="nav-group-label">Pages</div>
+        <div class="nav-item" data-section="portfolio">
+          <span class="nav-icon">📊</span> Portfolio
+        </div>
+        <div class="nav-item" data-section="pricing">
+          <span class="nav-icon">💰</span> Pricing Plans
+        </div>
+        <div class="nav-item" data-section="about">
+          <span class="nav-icon">👤</span> About Page
+        </div>
+        <div class="nav-item" data-section="contact">
+          <span class="nav-icon">📬</span> Contact Info
+        </div>
+        <div class="nav-item" data-section="casestudy">
+          <span class="nav-icon">📖</span> Case Study
+        </div>
+      </div>
+    </nav>
+
+    <div class="sidebar-footer">
+      <a href="/" target="_blank" class="site-preview-btn">🌐 View Live Site</a>
+      <button class="logout-btn" onclick="doLogout()">→ Sign Out</button>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <div class="main">
+
+    <!-- TOP BAR -->
+    <div class="topbar">
+      <div>
+        <div class="topbar-title" id="topbarTitle">Dashboard</div>
+      </div>
+      <div class="topbar-actions">
+        <div class="dirty-dot" title="Unsaved changes"></div>
+        <button class="save-all-btn" onclick="saveAll()">💾 Save All</button>
+      </div>
+    </div>
+
+    <!-- CONTENT AREA -->
+    <div class="content-area" id="contentArea">
+      <div class="loading-spinner"><div class="spinner"></div></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- TOAST CONTAINER -->
+<div id="toastContainer" class="toast-container"></div>
+
+<script src="js/admin.js"></script>
+</body>
+</html>

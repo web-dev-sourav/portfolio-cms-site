@@ -1,0 +1,359 @@
+{
+  "site": {
+    "name": "Alex Morgan",
+    "initials": "AM",
+    "tagline": "META Ads & Ecommerce Growth Expert",
+    "logoImage": null,
+    "profileImage": null,
+    "availability": true,
+    "availabilityText": "Available for New Clients",
+    "email": "hello@alexmorgan.co",
+    "phone": "+1 (555) 123-4567",
+    "location": "Remote — Available Worldwide",
+    "locationNote": "Working with clients in US, UK, EU, AU",
+    "responseTime": "Within 24 hours (usually <4 hrs)",
+    "copyrightText": "© 2026 Alex Morgan. All rights reserved.",
+    "footerTagline": "META Ads specialist helping ecommerce brands turn ad spend into scalable, predictable revenue.",
+    "social": {
+      "linkedin": "#",
+      "twitter": "#",
+      "instagram": "#",
+      "youtube": "#"
+    },
+    "primaryColor": "#0668E1",
+    "secondaryColor": "#7C3AED",
+    "accentColor": "#F59E0B"
+  },
+  "hero": {
+    "badgeText": "Available for New Clients",
+    "titleLine1": "Scale Your Brand",
+    "titleLine2": "With META Ads",
+    "titleLine3": "That Actually Convert",
+    "description": "I'm Alex Morgan — a performance marketer specialized in Facebook & Instagram advertising for ecommerce brands. I turn ad spend into predictable, scalable revenue.",
+    "cta1Text": "🚀 Work With Me",
+    "cta1Link": "contact.html",
+    "cta2Text": "📊 View Results",
+    "cta2Link": "portfolio.html",
+    "stats": [
+      { "id": "s1", "value": 12, "suffix": "M+", "prefix": "$", "label": "Ad Spend Managed" },
+      { "id": "s2", "value": 3.8, "suffix": "x", "prefix": "", "label": "Average ROAS" },
+      { "id": "s3", "value": 150, "suffix": "+", "prefix": "", "label": "Clients Scaled" },
+      { "id": "s4", "value": 98, "suffix": "%", "prefix": "", "label": "Client Retention" }
+    ],
+    "dashboardMetrics": [
+      { "label": "ROAS", "value": "4.2x", "color": "green" },
+      { "label": "Revenue", "value": "$84K", "color": "blue" },
+      { "label": "CTR", "value": "3.7%", "color": "purple" },
+      { "label": "CPA", "value": "$18", "color": "gold" }
+    ]
+  },
+  "trusted": [
+    "Shopify Store", "WooCommerce", "Fashion Brand", "Health & Wellness", "DTC Beauty", "Home Decor"
+  ],
+  "services": [
+    {
+      "id": "svc1",
+      "icon": "📘",
+      "iconColor": "blue",
+      "name": "META Ads Management",
+      "description": "Full-funnel Facebook & Instagram ad campaigns built to acquire customers profitably at scale.",
+      "tags": ["Campaign Structure", "Audience Targeting", "A/B Testing"]
+    },
+    {
+      "id": "svc2",
+      "icon": "🎯",
+      "iconColor": "purple",
+      "name": "Ecommerce Strategy",
+      "description": "Data-driven growth strategies connecting your ad funnel to your entire ecommerce stack.",
+      "tags": ["Funnel Design", "LTV Optimization", "Retention"]
+    },
+    {
+      "id": "svc3",
+      "icon": "📈",
+      "iconColor": "gold",
+      "name": "ROAS Optimization",
+      "description": "Systematic testing and optimization to squeeze maximum return from every dollar of ad spend.",
+      "tags": ["Creative Testing", "Bid Strategy", "Attribution"]
+    },
+    {
+      "id": "svc4",
+      "icon": "🛍️",
+      "iconColor": "green",
+      "name": "Catalog & Shopping Ads",
+      "description": "Dynamic product ads and META Advantage+ catalog campaigns that turn browsing into buying.",
+      "tags": ["Product Catalog", "DPA Ads", "Advantage+"]
+    },
+    {
+      "id": "svc5",
+      "icon": "🎨",
+      "iconColor": "pink",
+      "name": "Creative Strategy",
+      "description": "Ad creative frameworks built for scroll-stopping performance — from UGC to polished branded content.",
+      "tags": ["Creative Briefs", "UGC Direction", "Video Ads"]
+    },
+    {
+      "id": "svc6",
+      "icon": "📊",
+      "iconColor": "teal",
+      "name": "Analytics & Reporting",
+      "description": "Custom dashboards and weekly performance reports that give you full clarity on what's working.",
+      "tags": ["Custom Dashboards", "Weekly Reports", "Attribution"]
+    }
+  ],
+  "portfolio": [
+    {
+      "id": "p1",
+      "category": "Beauty & Skincare",
+      "thumbEmoji": "🧴",
+      "thumbClass": "beauty",
+      "thumbImage": null,
+      "title": "LuxeSkin Co. — Facebook & Instagram Scale",
+      "description": "Rebuilt META strategy for a DTC skincare brand resulting in 4.6x ROAS and $120K/month in revenue.",
+      "link": "case-study.html",
+      "metrics": [
+        { "value": "4.6x", "label": "ROAS" },
+        { "value": "-72%", "label": "CPA" },
+        { "value": "$120K", "label": "Monthly Rev" }
+      ]
+    },
+    {
+      "id": "p2",
+      "category": "Fitness & Sports",
+      "thumbEmoji": "💪",
+      "thumbClass": "fitness",
+      "thumbImage": null,
+      "title": "FitGear Pro — Video Creative Scale",
+      "description": "Full-funnel video creative strategy helped fitness brand grow from break-even to 5.1x ROAS in 6 months.",
+      "link": "case-study.html",
+      "metrics": [
+        { "value": "5.1x", "label": "ROAS" },
+        { "value": "+312%", "label": "Revenue" },
+        { "value": "$280K", "label": "Monthly Rev" }
+      ]
+    },
+    {
+      "id": "p3",
+      "category": "Fashion & Apparel",
+      "thumbEmoji": "👗",
+      "thumbClass": "fashion",
+      "thumbImage": null,
+      "title": "Urban Thread — Catalog & DPA Ads",
+      "description": "Dynamic product ads and retargeting strategy reduced CPA by 58% while tripling monthly orders.",
+      "link": "case-study.html",
+      "metrics": [
+        { "value": "3.7x", "label": "ROAS" },
+        { "value": "-58%", "label": "CPA" },
+        { "value": "3x Orders", "label": "Growth" }
+      ]
+    },
+    {
+      "id": "p4",
+      "category": "Home & Living",
+      "thumbEmoji": "🏠",
+      "thumbClass": "home",
+      "thumbImage": null,
+      "title": "Bloom Interiors — Instagram Shopping Scale",
+      "description": "Instagram shopping campaigns and Reels ads drove 3.9x ROAS for luxury home decor brand.",
+      "link": "case-study.html",
+      "metrics": [
+        { "value": "3.9x", "label": "ROAS" },
+        { "value": "+189%", "label": "Revenue" },
+        { "value": "$95K", "label": "Monthly Rev" }
+      ]
+    },
+    {
+      "id": "p5",
+      "category": "Health & Wellness",
+      "thumbEmoji": "💊",
+      "thumbClass": "health",
+      "thumbImage": null,
+      "title": "VitaCore Supplements — UGC Ad Strategy",
+      "description": "UGC-driven ad creative paired with lookalike audiences generated 287% more orders at 4.2x ROAS.",
+      "link": "case-study.html",
+      "metrics": [
+        { "value": "4.2x", "label": "ROAS" },
+        { "value": "+287%", "label": "Orders" },
+        { "value": "$72K", "label": "Monthly Rev" }
+      ]
+    },
+    {
+      "id": "p6",
+      "category": "Consumer Tech",
+      "thumbEmoji": "💻",
+      "thumbClass": "tech",
+      "thumbImage": null,
+      "title": "TechGadgets Store — Advantage+ Launch",
+      "description": "Launched new META Advantage+ Shopping Campaigns for electronics brand achieving 5.2x ROAS in 60 days.",
+      "link": "case-study.html",
+      "metrics": [
+        { "value": "5.2x", "label": "ROAS" },
+        { "value": "$340K", "label": "Monthly Rev" },
+        { "value": "60 days", "label": "To Scale" }
+      ]
+    }
+  ],
+  "testimonials": [
+    {
+      "id": "t1",
+      "stars": 5,
+      "text": "Alex took our ROAS from 1.8x to 4.6x in just 90 days. Our Shopify store went from $30K/month to over $120K without changing our product or pricing.",
+      "name": "Sarah R.",
+      "role": "Founder, LuxeSkin Co.",
+      "initials": "SR",
+      "avatarGradient": "var(--gradient-1)"
+    },
+    {
+      "id": "t2",
+      "stars": 5,
+      "text": "I was burning $15K/month on ads with nothing to show. Alex restructured everything and within 60 days we were profitable. Best investment I've made.",
+      "name": "James K.",
+      "role": "CEO, FitGear Pro",
+      "initials": "JK",
+      "avatarGradient": "var(--gradient-2)"
+    },
+    {
+      "id": "t3",
+      "stars": 5,
+      "text": "The creative strategy alone was worth 10x the retainer. Our click-through rates tripled and our CPA dropped by 58%. Alex knows META ads inside out.",
+      "name": "Maria L.",
+      "role": "CMO, Bloom Interiors",
+      "initials": "ML",
+      "avatarGradient": "var(--gradient-3)"
+    }
+  ],
+  "process": [
+    { "id": "pr1", "step": "01", "title": "Deep Audit", "description": "I audit your current ads account, analytics, and funnel to find hidden opportunities and costly leaks." },
+    { "id": "pr2", "step": "02", "title": "Strategy Build", "description": "Custom campaign architecture designed for your specific product, audience, and revenue goals." },
+    { "id": "pr3", "step": "03", "title": "Launch & Test", "description": "Scientific A/B testing across creatives, audiences, and offers to find your winning combinations fast." },
+    { "id": "pr4", "step": "04", "title": "Scale & Optimize", "description": "Aggressive but controlled scaling of proven campaigns while protecting your ROAS and profit margins." }
+  ],
+  "results": [
+    { "id": "r1", "value": "$12M+", "label": "Total Ad Spend Managed", "color": "gradient" },
+    { "id": "r2", "value": "3.8x", "label": "Average Return on Ad Spend", "color": "green" },
+    { "id": "r3", "value": "150+", "label": "Ecommerce Brands Scaled", "color": "purple" },
+    { "id": "r4", "value": "500+", "label": "Campaigns Launched", "color": "gold" }
+  ],
+  "pricing": [
+    {
+      "id": "pl1",
+      "name": "Starter",
+      "price": "1,500",
+      "period": "Best for brands spending $5K–$20K/mo on ads",
+      "featured": false,
+      "ctaText": "Get Started",
+      "features": [
+        { "text": "META Ads Management", "included": true },
+        { "text": "1 Ad Account", "included": true },
+        { "text": "Monthly Strategy Call", "included": true },
+        { "text": "Weekly Performance Reports", "included": true },
+        { "text": "Creative Recommendations", "included": true },
+        { "text": "Creative Production", "included": false },
+        { "text": "Dedicated Slack Channel", "included": false },
+        { "text": "CRO Consultation", "included": false }
+      ]
+    },
+    {
+      "id": "pl2",
+      "name": "Growth",
+      "price": "3,000",
+      "period": "Best for brands spending $20K–$100K/mo on ads",
+      "featured": true,
+      "ctaText": "Most Popular →",
+      "features": [
+        { "text": "Full META Ads Management", "included": true },
+        { "text": "Up to 3 Ad Accounts", "included": true },
+        { "text": "Bi-weekly Strategy Calls", "included": true },
+        { "text": "Weekly Performance Reports", "included": true },
+        { "text": "Creative Strategy & Briefs", "included": true },
+        { "text": "Creative Direction", "included": true },
+        { "text": "Dedicated Slack Channel", "included": true },
+        { "text": "CRO Consultation", "included": false }
+      ]
+    },
+    {
+      "id": "pl3",
+      "name": "Scale",
+      "price": "6,000",
+      "period": "Best for brands spending $100K+/mo on ads",
+      "featured": false,
+      "ctaText": "Let's Talk",
+      "features": [
+        { "text": "Full META Ads Management", "included": true },
+        { "text": "Unlimited Ad Accounts", "included": true },
+        { "text": "Weekly Strategy Calls", "included": true },
+        { "text": "Daily Performance Dashboards", "included": true },
+        { "text": "Complete Creative Production", "included": true },
+        { "text": "Creative Direction & UGC", "included": true },
+        { "text": "Dedicated Slack + Phone", "included": true },
+        { "text": "CRO & Landing Page Consulting", "included": true }
+      ]
+    }
+  ],
+  "about": {
+    "headline": "From Agency Life to Independent Specialist",
+    "bio": [
+      "I started my career at a top digital marketing agency where I managed millions in META ad spend for Fortune 500 companies. After 4 years, I saw that the brands getting the best results weren't the biggest — they were the ones with focused, specialized expertise behind their ads.",
+      "In 2021, I went independent to work exclusively with ecommerce brands — giving them the same quality of attention and expertise that previously only large corporations could afford. Today, I manage META advertising for 20+ active ecommerce clients ranging from $5K to $500K in monthly ad spend.",
+      "My edge? I don't just run ads — I understand ecommerce. I know how to optimize for lifetime value, not just front-end ROAS. I understand inventory constraints, contribution margin, and the full picture of what makes a DTC brand profitable."
+    ],
+    "skills": [
+      { "id": "sk1", "name": "META Ads Strategy", "percentage": 98 },
+      { "id": "sk2", "name": "Creative Strategy & Testing", "percentage": 92 },
+      { "id": "sk3", "name": "Ecommerce Analytics", "percentage": 90 },
+      { "id": "sk4", "name": "Audience Research & Targeting", "percentage": 95 },
+      { "id": "sk5", "name": "Conversion Rate Optimization", "percentage": 85 },
+      { "id": "sk6", "name": "Email & Retention Marketing", "percentage": 80 }
+    ],
+    "timeline": [
+      { "id": "tl1", "year": "2024 — Present", "title": "Independent META Ads Specialist", "description": "Managing $1M+/month in META ad spend for 20+ ecommerce brands across beauty, fitness, fashion, and health verticals." },
+      { "id": "tl2", "year": "2021 — 2023", "title": "Senior Performance Marketer — GrowthLab Agency", "description": "Led a team of 5 media buyers managing $500K+/month for DTC ecommerce clients. Developed the agency's creative testing framework." },
+      { "id": "tl3", "year": "2019 — 2021", "title": "Digital Marketing Manager — ShopScale Inc.", "description": "Managed all paid social campaigns for 50+ DTC Shopify brands. Achieved average 3.2x ROAS across portfolio." },
+      { "id": "tl4", "year": "2018 — 2019", "title": "Junior Media Buyer — PixelPerfect Agency", "description": "Learned the foundations of Facebook advertising and direct response marketing working with small business clients." }
+    ],
+    "values": [
+      { "id": "v1", "icon": "🎯", "title": "Data Over Gut Feel", "description": "Every decision is backed by data. I don't guess — I test, measure, and optimize based on what the numbers actually say." },
+      { "id": "v2", "icon": "🤝", "title": "True Partnership", "description": "I treat your business like my own. Your revenue goals become my goals. I'm invested in your long-term success." },
+      { "id": "v3", "icon": "🔍", "title": "Full Transparency", "description": "No black-box reporting. You'll always know exactly what I'm doing, why I'm doing it, and what results it's driving." },
+      { "id": "v4", "icon": "🚀", "title": "Speed to Results", "description": "I run lean, fast sprints. No 6-week onboarding. First campaigns live within 7 days of signing." }
+    ],
+    "tools": ["META Ads Manager", "META Business Suite", "Shopify", "WooCommerce", "Google Analytics 4", "Triple Whale", "Northbeam", "Klaviyo", "DataStudio / Looker", "ClickUp", "Notion", "Canva", "CapCut", "Hotjar", "Segment", "Slack"],
+    "certifications": [
+      { "id": "c1", "icon": "🏆", "name": "META Certified Media Buyer", "org": "Meta Blueprint, 2024" },
+      { "id": "c2", "icon": "📊", "name": "Google Analytics Certified", "org": "Google, 2024" },
+      { "id": "c3", "icon": "🛒", "name": "Shopify Partners", "org": "Shopify, 2023" },
+      { "id": "c4", "icon": "📧", "name": "Klaviyo Email Expert", "org": "Klaviyo, 2023" }
+    ]
+  },
+  "contact": {
+    "heroTitle": "Let's Build Something Profitable Together",
+    "heroSubtitle": "Tell me about your ecommerce brand and goals. I'll review everything and come back with a tailored growth strategy.",
+    "email": "hello@alexmorgan.co",
+    "phone": "+1 (555) 123-4567",
+    "location": "Remote — Available Worldwide",
+    "locationNote": "Working with clients in US, UK, EU, AU",
+    "responseTime": "Within 24 hours (usually <4 hrs)"
+  },
+  "caseStudy": {
+    "clientName": "LuxeSkin Co.",
+    "industry": "DTC Skincare",
+    "duration": "90 Days",
+    "adSpend": "$30K/month",
+    "platform": "META (FB + IG)",
+    "headline": "How LuxeSkin Co. Went from 1.3x to 4.6x ROAS in 90 Days",
+    "challenge": "LuxeSkin Co. is a DTC skincare brand selling premium serums and moisturizers online. When they came to me in January 2025, they had been running META ads for 8 months with dismal results — spending $30,000/month and generating just $39,000 in monthly revenue, a 1.3x ROAS that barely covered ad costs.",
+    "results": [
+      { "id": "cr1", "value": "4.6", "suffix": "x", "prefix": "", "label": "Final ROAS", "color": "#22C55E" },
+      { "id": "cr2", "value": "120", "suffix": "K", "prefix": "$", "label": "Monthly Revenue", "color": "#3B8BF5" },
+      { "id": "cr3", "value": "72", "suffix": "%", "prefix": "-", "label": "CPA Reduction", "color": "#EF4444" },
+      { "id": "cr4", "value": "287", "suffix": "%", "prefix": "+", "label": "Revenue Growth", "color": "#F59E0B" }
+    ],
+    "before": {
+      "roas": "1.3x", "revenue": "$39K", "cpa": "$84", "ctr": "0.8%"
+    },
+    "after": {
+      "roas": "4.6x", "revenue": "$120K", "cpa": "$23", "ctr": "3.7%"
+    },
+    "clientQuote": "Alex didn't just run ads — he rebuilt our entire marketing engine. I was ready to give up on Facebook ads entirely. Now it's our #1 revenue channel. The difference was strategy, not just tactics.",
+    "clientQuoteAuthor": "Emma L., Founder & CEO, LuxeSkin Co."
+  }
+}

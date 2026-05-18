@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem \"F:\\\\claudecode\\\\Portfolio Site\" -Recurse)",
+      "Bash(Select-Object FullName, Length)",
+      "Bash(Format-Table -AutoSize)",
+      "PowerShell(Get-ChildItem \"F:\\\\claudecode\\\\Portfolio Site\" -Recurse | Select-Object FullName, @{N='KB';E={[math]::Round\\($_.Length/1KB,1\\)}} | Format-Table -AutoSize)",
+      "Bash(npm install *)",
+      "PowerShell(Get-ChildItem \"F:\\\\claudecode\\\\Portfolio Site\" -Recurse | Where-Object { !$_.PSIsContainer } | Select-Object @{N='File';E={$_.FullName.Replace\\('F:\\\\claudecode\\\\Portfolio Site\\\\',''\\)}}, @{N='KB';E={[math]::Round\\($_.Length/1KB,1\\)}} | Sort-Object File | Format-Table -AutoSize)",
+      "Bash(npx vercel *)",
+      "Bash(git --version)",
+      "Bash(gh --version)",
+      "Bash(git init *)"
+    ]
+  }
+}

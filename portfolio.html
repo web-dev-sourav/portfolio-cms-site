@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — Alex Morgan | META Ads Results</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <style>
+    .portfolio-thumb-bg.beauty { background: linear-gradient(135deg, #FF6B9D 0%, #C44B9A 100%); }
+    .portfolio-thumb-bg.fitness { background: linear-gradient(135deg, #4ECDC4 0%, #1A535C 100%); }
+    .portfolio-thumb-bg.fashion { background: linear-gradient(135deg, #F7B731 0%, #E55039 100%); }
+    .portfolio-thumb-bg.home { background: linear-gradient(135deg, #6C5CE7 0%, #A29BFE 100%); }
+    .portfolio-thumb-bg.health { background: linear-gradient(135deg, #00B894 0%, #00CEC9 100%); }
+    .portfolio-thumb-bg.tech { background: linear-gradient(135deg, #0668E1 0%, #7C3AED 100%); }
+    .results-ticker { background: var(--dark-2); border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border); padding: 16px 0; overflow: hidden; margin-bottom: 0; }
+    .ticker-track { display: flex; gap: 4rem; animation: ticker 25s linear infinite; width: max-content; }
+    .ticker-item { display: flex; align-items: center; gap: 8px; white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary); }
+    .ticker-item .t-val { font-weight: 700; color: #22C55E; }
+    @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    .featured-case { background: var(--dark-3); border: 1px solid var(--glass-border); border-radius: var(--radius-lg); padding: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; margin-bottom: 1.5rem; transition: var(--transition); }
+    .featured-case:hover { border-color: rgba(6,104,225,0.3); box-shadow: var(--shadow-glow); }
+    .case-thumbnail { height: 260px; border-radius: var(--radius); overflow: hidden; display: flex; align-items: center; justify-content: center; font-size: 5rem; }
+    .mini-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 1.5rem; }
+    .mini-metric { text-align: center; padding: 12px; background: var(--dark-4); border-radius: var(--radius); }
+    .mini-metric .mm-val { font-size: 1.3rem; font-weight: 800; }
+    .mini-metric .mm-label { font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+    @media (max-width: 768px) { .featured-case { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<div id="pageLoader" class="page-loader">
+  <div class="loader-logo">AM.</div>
+  <div class="loader-bar-wrapper"><div class="loader-bar"></div></div>
+</div>
+<div id="cursorDot" class="cursor-dot"></div>
+<div id="cursorRing" class="cursor-ring"></div>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">AM<span>.</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="portfolio.html" class="active">Portfolio</a></li>
+      <li><a href="case-study.html">Case Studies</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="nav-cta">Let's Talk</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-glow"></div>
+  <div class="particles-bg"></div>
+  <div class="container">
+    <div class="section-badge" style="justify-content: center; display: inline-flex; margin-bottom: 1.5rem;">📊 Portfolio</div>
+    <h1 class="page-hero-title hero-animate-1">Real Campaigns.<br><span class="animated-gradient">Real Results.</span></h1>
+    <p class="page-hero-subtitle hero-animate-2">A selection of ecommerce brands I've helped scale using META advertising strategies.</p>
+  </div>
+</div>
+
+<!-- RESULTS TICKER -->
+<div class="results-ticker">
+  <div class="ticker-track">
+    <div class="ticker-item">📈 LuxeSkin Co. <span class="t-val">4.6x ROAS</span></div>
+    <div class="ticker-item">🛒 FitGear Pro <span class="t-val">+312% Revenue</span></div>
+    <div class="ticker-item">👗 Urban Thread <span class="t-val">-58% CPA</span></div>
+    <div class="ticker-item">🏠 Bloom Interiors <span class="t-val">3.9x ROAS</span></div>
+    <div class="ticker-item">💊 VitaCore <span class="t-val">+287% Orders</span></div>
+    <div class="ticker-item">💻 TechGadgets <span class="t-val">5.2x ROAS</span></div>
+    <!-- duplicate for seamless loop -->
+    <div class="ticker-item">📈 LuxeSkin Co. <span class="t-val">4.6x ROAS</span></div>
+    <div class="ticker-item">🛒 FitGear Pro <span class="t-val">+312% Revenue</span></div>
+    <div class="ticker-item">👗 Urban Thread <span class="t-val">-58% CPA</span></div>
+    <div class="ticker-item">🏠 Bloom Interiors <span class="t-val">3.9x ROAS</span></div>
+    <div class="ticker-item">💊 VitaCore <span class="t-val">+287% Orders</span></div>
+    <div class="ticker-item">💻 TechGadgets <span class="t-val">5.2x ROAS</span></div>
+  </div>
+</div>
+
+<!-- FEATURED CASES -->
+<section>
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge reveal">⭐ Featured</div>
+      <h2 class="section-title reveal delay-1"><span>Spotlight</span> Campaigns</h2>
+    </div>
+
+    <div class="featured-case reveal">
+      <div>
+        <div class="tag-chip blue" style="margin-bottom: 1rem;">Beauty & Skincare</div>
+        <h3 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 1rem;">LuxeSkin Co. — 4.6x ROAS in 90 Days</h3>
+        <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem;">Struggling DTC skincare brand was burning $30K/month with 1.3x ROAS. Rebuilt their entire META strategy from scratch with proper funnel architecture, UGC creative testing, and Advantage+ integration.</p>
+        <div class="mini-metrics">
+          <div class="mini-metric"><div class="mm-val" style="color: #22C55E;">4.6x</div><div class="mm-label">ROAS</div></div>
+          <div class="mini-metric"><div class="mm-val" style="color: var(--primary-light);">$120K</div><div class="mm-label">Monthly Rev</div></div>
+          <div class="mini-metric"><div class="mm-val" style="color: #A78BFA;">-72%</div><div class="mm-label">CPA Drop</div></div>
+        </div>
+        <div style="margin-top: 1.5rem; display: flex; gap: 10px;">
+          <a href="case-study.html" class="btn-primary" style="padding: 10px 22px; font-size: 0.85rem;">Read Full Case Study</a>
+        </div>
+      </div>
+      <div class="case-thumbnail beauty">🧴</div>
+    </div>
+
+    <div class="featured-case reveal">
+      <div class="case-thumbnail fitness">💪</div>
+      <div>
+        <div class="tag-chip green" style="margin-bottom: 1rem;">Fitness & Sports</div>
+        <h3 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 1rem;">FitGear Pro — From Break-Even to 5.1x ROAS</h3>
+        <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem;">Fitness equipment brand was spending $50K/month with minimal ROI. Implemented a full-funnel video creative strategy and custom audience stacking that unlocked explosive growth.</p>
+        <div class="mini-metrics">
+          <div class="mini-metric"><div class="mm-val" style="color: #22C55E;">5.1x</div><div class="mm-label">ROAS</div></div>
+          <div class="mini-metric"><div class="mm-val" style="color: var(--accent);">+312%</div><div class="mm-label">Revenue</div></div>
+          <div class="mini-metric"><div class="mm-val" style="color: var(--primary-light);">$280K</div><div class="mm-label">Monthly Rev</div></div>
+        </div>
+        <div style="margin-top: 1.5rem;">
+          <a href="case-study.html" class="btn-primary" style="padding: 10px 22px; font-size: 0.85rem;">Read Full Case Study</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO GRID -->
+<section style="background: var(--dark-2);">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge reveal">🗂️ All Work</div>
+      <h2 class="section-title reveal delay-1">Browse All <span>Campaigns</span></h2>
+    </div>
+
+    <!-- Filter -->
+    <div class="portfolio-filter reveal">
+      <button class="filter-btn active" data-filter="all">All Industries</button>
+      <button class="filter-btn" data-filter="beauty">Beauty</button>
+      <button class="filter-btn" data-filter="fitness">Fitness</button>
+      <button class="filter-btn" data-filter="fashion">Fashion</button>
+      <button class="filter-btn" data-filter="home">Home & Living</button>
+      <button class="filter-btn" data-filter="health">Health</button>
+    </div>
+
+    <div class="portfolio-grid" data-cms-list="portfolio">
+
+      <div class="portfolio-card reveal delay-1" data-category="beauty">
+        <div class="portfolio-thumb">
+          <div class="portfolio-thumb-bg beauty">🧴</div>
+          <div class="portfolio-thumb-overlay">
+            <a href="case-study.html" class="view-btn">View Case Study →</a>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-category">Beauty & Skincare</div>
+          <div class="portfolio-title">LuxeSkin Co. — Facebook & Instagram Scale</div>
+          <div class="portfolio-desc">Rebuilt META strategy for a DTC skincare brand resulting in 4.6x ROAS and $120K/month in revenue.</div>
+          <div class="portfolio-metrics">
+            <div class="p-metric"><div class="pm-value">4.6x</div><div class="pm-label">ROAS</div></div>
+            <div class="p-metric"><div class="pm-value">-72%</div><div class="pm-label">CPA</div></div>
+            <div class="p-metric"><div class="pm-value">$120K</div><div class="pm-label">Monthly Rev</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-card reveal delay-2" data-category="fitness">
+        <div class="portfolio-thumb">
+          <div class="portfolio-thumb-bg fitness">💪</div>
+          <div class="portfolio-thumb-overlay">
+            <a href="case-study.html" class="view-btn">View Case Study →</a>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-category">Fitness & Sports</div>
+          <div class="portfolio-title">FitGear Pro — Video Creative Scale</div>
+          <div class="portfolio-desc">Full-funnel video creative strategy helped fitness brand grow from break-even to 5.1x ROAS in 6 months.</div>
+          <div class="portfolio-metrics">
+            <div class="p-metric"><div class="pm-value">5.1x</div><div class="pm-label">ROAS</div></div>
+            <div class="p-metric"><div class="pm-value">+312%</div><div class="pm-label">Revenue</div></div>
+            <div class="p-metric"><div class="pm-value">$280K</div><div class="pm-label">Monthly Rev</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-card reveal delay-3" data-category="fashion">
+        <div class="portfolio-thumb">
+          <div class="portfolio-thumb-bg fashion">👗</div>
+          <div class="portfolio-thumb-overlay">
+            <a href="case-study.html" class="view-btn">View Case Study →</a>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-category">Fashion & Apparel</div>
+          <div class="portfolio-title">Urban Thread — Catalog & DPA Ads</div>
+          <div class="portfolio-desc">Dynamic product ads and retargeting strategy reduced CPA by 58% while tripling monthly orders for this fashion brand.</div>
+          <div class="portfolio-metrics">
+            <div class="p-metric"><div class="pm-value">3.7x</div><div class="pm-label">ROAS</div></div>
+            <div class="p-metric"><div class="pm-value">-58%</div><div class="pm-label">CPA</div></div>
+            <div class="p-metric"><div class="pm-value">3x</div><div class="pm-label">Orders</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-card reveal delay-4" data-category="home">
+        <div class="portfolio-thumb">
+          <div class="portfolio-thumb-bg home">🏠</div>
+          <div class="portfolio-thumb-overlay">
+            <a href="case-study.html" class="view-btn">View Case Study →</a>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-category">Home & Living</div>
+          <div class="portfolio-title">Bloom Interiors — Instagram Shopping Scale</div>
+          <div class="portfolio-desc">Instagram shopping campaigns and Reels ads drove 3.9x ROAS for luxury home decor brand targeting high-intent buyers.</div>
+          <div class="portfolio-metrics">
+            <div class="p-metric"><div class="pm-value">3.9x</div><div class="pm-label">ROAS</div></div>
+            <div class="p-metric"><div class="pm-value">+189%</div><div class="pm-label">Revenue</div></div>
+            <div class="p-metric"><div class="pm-value">$95K</div><div class="pm-label">Monthly Rev</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-card reveal delay-5" data-category="health">
+        <div class="portfolio-thumb">
+          <div class="portfolio-thumb-bg health">💊</div>
+          <div class="portfolio-thumb-overlay">
+            <a href="case-study.html" class="view-btn">View Case Study →</a>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-category">Health & Wellness</div>
+          <div class="portfolio-title">VitaCore Supplements — UGC Ad Strategy</div>
+          <div class="portfolio-desc">UGC-driven ad creative paired with lookalike audiences generated 287% more orders at a 4.2x ROAS for supplements brand.</div>
+          <div class="portfolio-metrics">
+            <div class="p-metric"><div class="pm-value">4.2x</div><div class="pm-label">ROAS</div></div>
+            <div class="p-metric"><div class="pm-value">+287%</div><div class="pm-label">Orders</div></div>
+            <div class="p-metric"><div class="pm-value">$72K</div><div class="pm-label">Monthly Rev</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-card reveal delay-6" data-category="fitness">
+        <div class="portfolio-thumb">
+          <div class="portfolio-thumb-bg tech">💻</div>
+          <div class="portfolio-thumb-overlay">
+            <a href="case-study.html" class="view-btn">View Case Study →</a>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-category">Consumer Tech</div>
+          <div class="portfolio-title">TechGadgets Store — Advantage+ Launch</div>
+          <div class="portfolio-desc">Launched new META Advantage+ Shopping Campaigns for electronics brand achieving 5.2x ROAS in first 60 days.</div>
+          <div class="portfolio-metrics">
+            <div class="p-metric"><div class="pm-value">5.2x</div><div class="pm-label">ROAS</div></div>
+            <div class="p-metric"><div class="pm-value">$340K</div><div class="pm-label">Monthly Rev</div></div>
+            <div class="p-metric"><div class="pm-value">60</div><div class="pm-label">Days to Scale</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- AGGREGATE STATS -->
+<section>
+  <div class="container">
+    <div class="section-header center">
+      <div class="section-badge reveal">📊 Aggregate Results</div>
+      <h2 class="section-title reveal delay-1">Across All <span>Client Campaigns</span></h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem;" class="reveal">
+      <div style="text-align: center; padding: 40px 24px; background: var(--dark-3); border-radius: var(--radius-lg); border: 1px solid var(--glass-border);">
+        <div style="font-size: 3rem; font-weight: 900; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent;" data-counter data-target="3.8" data-suffix="x">0x</div>
+        <div style="color: var(--text-muted); font-size: 0.8rem; margin-top: 6px;">Avg. ROAS</div>
+      </div>
+      <div style="text-align: center; padding: 40px 24px; background: var(--dark-3); border-radius: var(--radius-lg); border: 1px solid var(--glass-border);">
+        <div style="font-size: 3rem; font-weight: 900; color: #22C55E;" data-counter data-target="47" data-suffix="%">0%</div>
+        <div style="color: var(--text-muted); font-size: 0.8rem; margin-top: 6px;">Avg. CPA Reduction</div>
+      </div>
+      <div style="text-align: center; padding: 40px 24px; background: var(--dark-3); border-radius: var(--radius-lg); border: 1px solid var(--glass-border);">
+        <div style="font-size: 3rem; font-weight: 900; color: #A78BFA;" data-counter data-target="230" data-suffix="%">0%</div>
+        <div style="color: var(--text-muted); font-size: 0.8rem; margin-top: 6px;">Avg. Revenue Growth</div>
+      </div>
+      <div style="text-align: center; padding: 40px 24px; background: var(--dark-3); border-radius: var(--radius-lg); border: 1px solid var(--glass-border);">
+        <div style="font-size: 3rem; font-weight: 900; color: var(--accent);" data-counter data-target="90" data-suffix=" days">0</div>
+        <div style="color: var(--text-muted); font-size: 0.8rem; margin-top: 6px;">Avg. Time to Scale</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="background: var(--dark-2);">
+  <div class="container">
+    <div class="cta-section reveal">
+      <h2 class="cta-title">Want Results Like <span class="animated-gradient">These?</span></h2>
+      <p class="cta-subtitle">Book a free strategy session. I'll review your current campaigns and map out a growth plan for your brand.</p>
+      <a href="contact.html" class="btn-primary">🚀 Start Your Growth Journey</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">Alex Morgan.</div>
+        <p class="footer-tagline">META Ads specialist helping ecommerce brands turn ad spend into scalable revenue.</p>
+      </div>
+      <div><div class="footer-heading">Navigation</div><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><div class="footer-heading">Services</div><ul class="footer-links"><li><a href="services.html">META Ads Management</a></li><li><a href="services.html">ROAS Optimization</a></li><li><a href="services.html">Creative Strategy</a></li></ul></div>
+      <div class="footer-newsletter"><div class="footer-heading">Newsletter</div><p>Get META ads tips every Tuesday.</p><form class="newsletter-form" onsubmit="return false;"><input type="email" class="newsletter-input" placeholder="your@email.com" /><button class="newsletter-btn" type="submit">→</button></form></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Alex Morgan. All rights reserved.</span><span>Built for performance.</span></div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/content-loader.js"></script>
+</body>
+</html>

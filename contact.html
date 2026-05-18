@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Alex Morgan | Let's Talk META Ads</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <style>
+    .availability-badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(34, 197, 94, 0.1);
+      border: 1px solid rgba(34, 197, 94, 0.25);
+      padding: 12px 20px;
+      border-radius: var(--radius);
+      margin-bottom: 2rem;
+    }
+    .availability-badge .dot { width: 10px; height: 10px; background: #22C55E; border-radius: 50%; animation: pulse 2s infinite; flex-shrink: 0; }
+    .availability-badge span { font-size: 0.9rem; font-weight: 600; color: #4ADE80; }
+    .process-mini { display: flex; flex-direction: column; gap: 16px; margin-top: 2rem; }
+    .process-mini-item { display: flex; gap: 16px; align-items: flex-start; }
+    .process-mini-num { width: 32px; height: 32px; border-radius: 50%; background: var(--gradient-1); display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 800; color: #fff; flex-shrink: 0; margin-top: 2px; }
+    .process-mini-title { font-size: 0.9rem; font-weight: 700; margin-bottom: 4px; }
+    .process-mini-desc { font-size: 0.82rem; color: var(--text-muted); }
+    .form-submit-btn { width: 100%; padding: 16px; background: var(--gradient-1); color: #fff; border-radius: var(--radius); font-weight: 700; font-size: 1rem; transition: var(--transition); font-family: inherit; box-shadow: 0 4px 20px rgba(6,104,225,0.4); margin-top: 0.5rem; }
+    .form-submit-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(6,104,225,0.5); }
+    .form-submit-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+    .calendar-block { background: var(--dark-3); border: 1px solid var(--glass-border); border-radius: var(--radius-lg); padding: 40px; text-align: center; margin-top: 2rem; }
+    .cal-icon { font-size: 3rem; margin-bottom: 1rem; }
+    .cal-title { font-size: 1.2rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .cal-desc { font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 1.5rem; }
+  </style>
+</head>
+<body>
+
+<div id="pageLoader" class="page-loader">
+  <div class="loader-logo">AM.</div>
+  <div class="loader-bar-wrapper"><div class="loader-bar"></div></div>
+</div>
+<div id="cursorDot" class="cursor-dot"></div>
+<div id="cursorRing" class="cursor-ring"></div>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">AM<span>.</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="case-study.html">Case Studies</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="nav-cta active">Let's Talk</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-glow"></div>
+  <div class="particles-bg"></div>
+  <div class="container">
+    <div class="section-badge" style="justify-content: center; display: inline-flex; margin-bottom: 1.5rem;">📬 Contact</div>
+    <h1 class="page-hero-title hero-animate-1">Let's Build Something<br><span class="animated-gradient">Profitable Together</span></h1>
+    <p class="page-hero-subtitle hero-animate-2">Tell me about your ecommerce brand and goals. I'll review everything and come back with a tailored growth strategy.</p>
+  </div>
+</div>
+
+<!-- CONTACT SECTION -->
+<section>
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- LEFT INFO -->
+      <div class="contact-info reveal-left">
+        <div class="availability-badge">
+          <div class="dot"></div>
+          <span>Currently accepting new clients</span>
+        </div>
+
+        <h2 class="section-title" style="font-size: 1.8rem; margin-bottom: 1rem;">Let's <span>Start the Conversation</span></h2>
+        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.8; margin-bottom: 2rem;">Fill out the form or use any of the contact options below. I personally respond to every message within 24 hours, usually much faster.</p>
+
+        <div class="contact-info-item">
+          <div class="contact-icon">📧</div>
+          <div>
+            <div class="contact-info-title">Email</div>
+            <div class="contact-info-text">hello@alexmorgan.co</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-icon">📱</div>
+          <div>
+            <div class="contact-info-title">Phone / WhatsApp</div>
+            <div class="contact-info-text">+1 (555) 123-4567</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div class="contact-info-title">Location</div>
+            <div class="contact-info-text">Remote — Available Worldwide<br><span style="font-size: 0.78rem; color: var(--text-muted);">Working with clients in US, UK, EU, AU</span></div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-icon">⏰</div>
+          <div>
+            <div class="contact-info-title">Response Time</div>
+            <div class="contact-info-text">Within 24 hours (usually &lt;4 hrs)</div>
+          </div>
+        </div>
+
+        <!-- Social Links -->
+        <div>
+          <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 1rem; font-weight: 600;">Connect with Me</div>
+          <div class="social-links">
+            <a href="#" class="social-link" title="LinkedIn">in</a>
+            <a href="#" class="social-link" title="Twitter/X">𝕏</a>
+            <a href="#" class="social-link" title="Instagram">▣</a>
+            <a href="#" class="social-link" title="YouTube">▶</a>
+          </div>
+        </div>
+
+        <!-- Process Mini -->
+        <div style="margin-top: 3rem; padding: 28px; background: var(--glass); border: 1px solid var(--glass-border); border-radius: var(--radius-lg);">
+          <div style="font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 1.5rem;">What Happens Next</div>
+          <div class="process-mini">
+            <div class="process-mini-item">
+              <div class="process-mini-num">1</div>
+              <div><div class="process-mini-title">I Review Your Message</div><div class="process-mini-desc">I personally read every inquiry and review your website/ad account if shared.</div></div>
+            </div>
+            <div class="process-mini-item">
+              <div class="process-mini-num">2</div>
+              <div><div class="process-mini-title">Free Strategy Call</div><div class="process-mini-desc">30-minute call to audit your current situation and map out a growth strategy.</div></div>
+            </div>
+            <div class="process-mini-item">
+              <div class="process-mini-num">3</div>
+              <div><div class="process-mini-title">Custom Proposal</div><div class="process-mini-desc">I send a tailored proposal with scope, pricing, and projected outcomes.</div></div>
+            </div>
+            <div class="process-mini-item">
+              <div class="process-mini-num">4</div>
+              <div><div class="process-mini-title">We Launch</div><div class="process-mini-desc">After signing, onboarding is complete in 3–5 days. First campaigns live within 7 days.</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT FORM -->
+      <div class="reveal-right">
+        <div class="contact-form">
+          <h3 style="font-size: 1.3rem; font-weight: 800; margin-bottom: 0.5rem;">Send Me a Message</h3>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 2rem;">Tell me about your brand and what you're looking to achieve.</p>
+
+          <form id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="firstName">First Name *</label>
+                <input type="text" id="firstName" name="firstName" class="form-control" placeholder="John" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="lastName">Last Name *</label>
+                <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Smith" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="email">Email Address *</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="john@yourbrand.com" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="phone">Phone / WhatsApp</label>
+                <input type="tel" id="phone" name="phone" class="form-control" placeholder="+1 (555) 000-0000" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="website">Your Website / Shopify Store *</label>
+              <input type="url" id="website" name="website" class="form-control" placeholder="https://yourstore.com" required />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="adSpend">Current Monthly Ad Spend</label>
+                <select id="adSpend" name="adSpend" class="form-control">
+                  <option value="">Select range...</option>
+                  <option>Not running ads yet</option>
+                  <option>Under $5K/month</option>
+                  <option>$5K – $20K/month</option>
+                  <option>$20K – $100K/month</option>
+                  <option>$100K+ /month</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="industry">Industry</label>
+                <select id="industry" name="industry" class="form-control">
+                  <option value="">Select industry...</option>
+                  <option>Beauty & Skincare</option>
+                  <option>Fashion & Apparel</option>
+                  <option>Fitness & Sports</option>
+                  <option>Health & Wellness</option>
+                  <option>Home & Living</option>
+                  <option>Consumer Electronics</option>
+                  <option>Food & Beverage</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="service">Service Interested In</label>
+              <select id="service" name="service" class="form-control">
+                <option value="">What are you looking for?</option>
+                <option>META Ads Management (Full Service)</option>
+                <option>ROAS Optimization / Audit</option>
+                <option>Creative Strategy</option>
+                <option>Ecommerce Strategy Consulting</option>
+                <option>Analytics & Reporting Setup</option>
+                <option>Not sure — need advice</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="message">Tell Me About Your Goals *</label>
+              <textarea id="message" name="message" class="form-control" rows="5" placeholder="Where are you now? What results are you hoping to achieve? What's not working about your current ads? The more context you give me, the better I can help..." required></textarea>
+            </div>
+
+            <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 1.5rem;">
+              <input type="checkbox" id="privacy" style="margin-top: 4px; accent-color: var(--primary);" />
+              <label for="privacy" style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; cursor: pointer;">I agree to be contacted about my inquiry. I understand my data won't be shared with third parties. <a href="#" style="color: var(--primary-light);">Privacy Policy</a></label>
+            </div>
+
+            <button type="submit" class="form-submit-btn">🚀 Send Message & Get Free Audit</button>
+
+            <p style="text-align: center; font-size: 0.78rem; color: var(--text-muted); margin-top: 1rem;">⚡ I respond within 24 hours · No spam, ever</p>
+          </form>
+        </div>
+
+        <!-- Book Call Alternative -->
+        <div class="calendar-block">
+          <div class="cal-icon">📅</div>
+          <div class="cal-title">Prefer to Book a Call Directly?</div>
+          <div class="cal-desc">Skip the form and book a free 30-minute strategy call straight into my calendar.</div>
+          <a href="#" class="btn-primary" onclick="showToast('Calendar', 'Calendar booking would open here.'); return false;">Book Free 30-Min Call</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ MINI -->
+<section style="background: var(--dark-2);">
+  <div class="container">
+    <div class="section-header center">
+      <div class="section-badge reveal">❓ Quick FAQ</div>
+      <h2 class="section-title reveal delay-1">Before You <span>Reach Out</span></h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+      <div style="padding: 28px; background: var(--dark-3); border: 1px solid var(--glass-border); border-radius: var(--radius-lg);" class="reveal delay-1">
+        <div style="font-size: 1.1rem; font-weight: 700; margin-bottom: 10px;">🕐 How fast do you respond?</div>
+        <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.7;">I personally respond to all inquiries within 24 hours. Most messages get a reply within 2–4 hours during business hours.</p>
+      </div>
+      <div style="padding: 28px; background: var(--dark-3); border: 1px solid var(--glass-border); border-radius: var(--radius-lg);" class="reveal delay-2">
+        <div style="font-size: 1.1rem; font-weight: 700; margin-bottom: 10px;">💰 Do you take on small budgets?</div>
+        <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.7;">My minimum ad spend requirement is $5K/month. Below that, I can't generate enough data to optimize properly and guarantee results.</p>
+      </div>
+      <div style="padding: 28px; background: var(--dark-3); border: 1px solid var(--glass-border); border-radius: var(--radius-lg);" class="reveal delay-3">
+        <div style="font-size: 1.1rem; font-weight: 700; margin-bottom: 10px;">🌎 Do you work with international brands?</div>
+        <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.7;">Yes! I work with clients in the US, UK, EU, Canada, and Australia. All work is done remotely with async communication via Slack.</p>
+      </div>
+      <div style="padding: 28px; background: var(--dark-3); border: 1px solid var(--glass-border); border-radius: var(--radius-lg);" class="reveal delay-4">
+        <div style="font-size: 1.1rem; font-weight: 700; margin-bottom: 10px;">📄 Do you have case studies?</div>
+        <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.7;">Yes — detailed case studies are available on this site. I can also share NDA-protected results for your specific industry on our discovery call.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">Alex Morgan.</div>
+        <p class="footer-tagline">META Ads specialist helping ecommerce brands turn ad spend into scalable revenue.</p>
+      </div>
+      <div><div class="footer-heading">Navigation</div><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><div class="footer-heading">Services</div><ul class="footer-links"><li><a href="services.html">META Ads Management</a></li><li><a href="services.html">ROAS Optimization</a></li><li><a href="services.html">Creative Strategy</a></li></ul></div>
+      <div class="footer-newsletter"><div class="footer-heading">Newsletter</div><p>Get META ads tips every Tuesday.</p><form class="newsletter-form" onsubmit="return false;"><input type="email" class="newsletter-input" placeholder="your@email.com" /><button class="newsletter-btn" type="submit">→</button></form></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Alex Morgan. All rights reserved.</span><span>Built for performance.</span></div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/content-loader.js"></script>
+<script>
+function showToast(title, msg) {
+  let toast = document.getElementById('toast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'toast';
+    toast.className = 'toast';
+    toast.innerHTML = '<div class="toast-icon">✅</div><div><div class="toast-title"></div><div class="toast-msg"></div></div>';
+    document.body.appendChild(toast);
+  }
+  toast.querySelector('.toast-title').textContent = title;
+  toast.querySelector('.toast-msg').textContent = msg;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 4000);
+}
+</script>
+</body>
+</html>

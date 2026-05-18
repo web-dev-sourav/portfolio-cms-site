@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Alex Morgan | META Ads Specialist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <style>
+    .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+    .value-card { background: var(--glass); border: 1px solid var(--glass-border); border-radius: var(--radius-lg); padding: 28px; transition: var(--transition); }
+    .value-card:hover { border-color: rgba(6,104,225,0.3); transform: translateY(-4px); }
+    .value-icon { font-size: 2rem; margin-bottom: 1rem; }
+    .value-title { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+    .value-desc { font-size: 0.87rem; color: var(--text-secondary); line-height: 1.7; }
+    .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+    .cert-card { background: var(--dark-3); border: 1px solid var(--glass-border); border-radius: var(--radius); padding: 24px; text-align: center; transition: var(--transition); }
+    .cert-card:hover { border-color: rgba(6,104,225,0.3); }
+    .cert-icon { font-size: 2rem; margin-bottom: 12px; }
+    .cert-name { font-size: 0.88rem; font-weight: 700; margin-bottom: 4px; }
+    .cert-org { font-size: 0.75rem; color: var(--text-muted); }
+    .tools-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+    .tool-chip { padding: 8px 16px; background: var(--dark-3); border: 1px solid var(--glass-border); border-radius: 50px; font-size: 0.82rem; font-weight: 600; color: var(--text-secondary); transition: var(--transition); }
+    .tool-chip:hover { border-color: var(--primary); color: var(--primary-light); }
+    .experience-number { font-size: 4rem; font-weight: 900; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1; }
+  </style>
+</head>
+<body>
+
+<div id="pageLoader" class="page-loader">
+  <div class="loader-logo">AM.</div>
+  <div class="loader-bar-wrapper"><div class="loader-bar"></div></div>
+</div>
+<div id="cursorDot" class="cursor-dot"></div>
+<div id="cursorRing" class="cursor-ring"></div>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">AM<span>.</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="case-study.html">Case Studies</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="contact.html" class="nav-cta">Let's Talk</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-glow"></div>
+  <div class="particles-bg"></div>
+  <div class="container">
+    <div class="section-badge" style="justify-content: center; display: inline-flex; margin-bottom: 1.5rem;">👋 About Me</div>
+    <h1 class="page-hero-title hero-animate-1">I Help Ecommerce Brands<br><span class="animated-gradient">Win With META Ads</span></h1>
+    <p class="page-hero-subtitle hero-animate-2">6+ years of hands-on experience turning ad spend into scalable, predictable ecommerce revenue.</p>
+  </div>
+</div>
+
+<!-- ABOUT HERO -->
+<section>
+  <div class="container">
+    <div class="about-hero">
+      <!-- Image -->
+      <div class="about-image-wrapper reveal-left">
+        <div class="about-image-card">🧑‍💻</div>
+        <div class="about-stat-floating top-right">
+          <div class="asf-value">6+</div>
+          <div class="asf-label">Years of Experience</div>
+        </div>
+        <div class="about-stat-floating bottom-left">
+          <div class="asf-value">$12M+</div>
+          <div class="asf-label">Ad Spend Managed</div>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="reveal-right">
+        <div class="section-badge" style="margin-bottom: 1.5rem;">My Story</div>
+        <h2 class="about-title">From Agency Life to<br><span style="background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Independent Specialist</span></h2>
+        <p class="about-desc">
+          I started my career at a top digital marketing agency where I managed millions in META ad spend for Fortune 500 companies. After 4 years, I saw that the brands getting the best results weren't the biggest — they were the ones with focused, specialized expertise behind their ads.
+        </p>
+        <p class="about-desc">
+          In 2021, I went independent to work exclusively with ecommerce brands — giving them the same quality of attention and expertise that previously only large corporations could afford. Today, I manage META advertising for 20+ active ecommerce clients ranging from $5K to $500K in monthly ad spend.
+        </p>
+        <p class="about-desc">
+          My edge? I don't just run ads — I understand ecommerce. I know how to optimize for lifetime value, not just front-end ROAS. I understand inventory constraints, contribution margin, and the full picture of what makes a DTC brand profitable.
+        </p>
+        <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+          <a href="contact.html" class="btn-primary">Work With Me</a>
+          <a href="portfolio.html" class="btn-secondary">See My Work</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section style="background: var(--dark-2);">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;">
+      <div class="reveal-left">
+        <div class="section-badge" style="margin-bottom: 1.5rem;">🧠 Expertise</div>
+        <h2 class="section-title" style="margin-bottom: 2rem;">Core <span>Skills</span></h2>
+        <div class="skills-grid" data-cms-list="about.skills">
+          <div class="skill-item">
+            <div class="skill-header"><span>META Ads Strategy</span><span>98%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="98%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span>Creative Strategy & Testing</span><span>92%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="92%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span>Ecommerce Analytics</span><span>90%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="90%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span>Audience Research & Targeting</span><span>95%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="95%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span>Conversion Rate Optimization</span><span>85%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="85%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span>Email & Retention Marketing</span><span>80%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="80%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal-right">
+        <div class="section-badge" style="margin-bottom: 1.5rem;">🛠️ Tools</div>
+        <h2 class="section-title" style="margin-bottom: 2rem;">Tech <span>Stack</span></h2>
+        <div class="tools-grid" data-cms-list="about.tools">
+          <div class="tool-chip">META Ads Manager</div>
+          <div class="tool-chip">META Business Suite</div>
+          <div class="tool-chip">Shopify</div>
+          <div class="tool-chip">WooCommerce</div>
+          <div class="tool-chip">Google Analytics 4</div>
+          <div class="tool-chip">Triple Whale</div>
+          <div class="tool-chip">Northbeam</div>
+          <div class="tool-chip">Klaviyo</div>
+          <div class="tool-chip">DataStudio / Looker</div>
+          <div class="tool-chip">ClickUp</div>
+          <div class="tool-chip">Notion</div>
+          <div class="tool-chip">Canva</div>
+          <div class="tool-chip">CapCut</div>
+          <div class="tool-chip">Hotjar</div>
+          <div class="tool-chip">Segment</div>
+          <div class="tool-chip">Slack</div>
+        </div>
+
+        <div style="margin-top: 3rem;">
+          <div class="section-badge" style="margin-bottom: 1.5rem;">🎓 Certifications</div>
+          <div class="cert-grid" data-cms-list="about.certifications">
+            <div class="cert-card">
+              <div class="cert-icon">🏆</div>
+              <div class="cert-name">META Certified Media Buyer</div>
+              <div class="cert-org">Meta Blueprint, 2024</div>
+            </div>
+            <div class="cert-card">
+              <div class="cert-icon">📊</div>
+              <div class="cert-name">Google Analytics Certified</div>
+              <div class="cert-org">Google, 2024</div>
+            </div>
+            <div class="cert-card">
+              <div class="cert-icon">🛒</div>
+              <div class="cert-name">Shopify Partners</div>
+              <div class="cert-org">Shopify, 2023</div>
+            </div>
+            <div class="cert-card">
+              <div class="cert-icon">📧</div>
+              <div class="cert-name">Klaviyo Email Expert</div>
+              <div class="cert-org">Klaviyo, 2023</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE TIMELINE -->
+<section>
+  <div class="container">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;">
+      <div class="reveal-left">
+        <div class="section-badge" style="margin-bottom: 1.5rem;">📅 Journey</div>
+        <h2 class="section-title" style="margin-bottom: 2.5rem;">My <span>Career Path</span></h2>
+        <div class="timeline" data-cms-list="about.timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2026 — Present</div>
+            <div class="timeline-title">Independent META Ads Specialist</div>
+            <div class="timeline-desc">Managing $1M+/month in META ad spend for 20+ ecommerce brands across beauty, fitness, fashion, and health verticals.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2021 — 2023</div>
+            <div class="timeline-title">Senior Performance Marketer — GrowthLab Agency</div>
+            <div class="timeline-desc">Led a team of 5 media buyers managing $500K+/month for DTC ecommerce clients. Developed the agency's creative testing framework and attribution models.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2019 — 2021</div>
+            <div class="timeline-title">Digital Marketing Manager — ShopScale Inc.</div>
+            <div class="timeline-desc">Managed all paid social campaigns for 50+ DTC Shopify brands. Achieved average 3.2x ROAS across portfolio.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2018 — 2019</div>
+            <div class="timeline-title">Junior Media Buyer — PixelPerfect Agency</div>
+            <div class="timeline-desc">Learned the foundations of Facebook advertising and direct response marketing working with small business clients.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal-right">
+        <div class="section-badge" style="margin-bottom: 1.5rem;">💡 Values</div>
+        <h2 class="section-title" style="margin-bottom: 2rem;">How I <span>Work</span></h2>
+        <div class="values-grid" style="grid-template-columns: 1fr;" data-cms-list="about.values">
+          <div class="value-card">
+            <div class="value-icon">🎯</div>
+            <div class="value-title">Data Over Gut Feel</div>
+            <div class="value-desc">Every decision is backed by data. I don't guess — I test, measure, and optimize based on what the numbers actually say.</div>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">🤝</div>
+            <div class="value-title">True Partnership</div>
+            <div class="value-desc">I treat your business like my own. Your revenue goals become my goals. I'm invested in your long-term success, not just the monthly retainer.</div>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">🔍</div>
+            <div class="value-title">Full Transparency</div>
+            <div class="value-desc">No black-box reporting. You'll always know exactly what I'm doing, why I'm doing it, and what results it's driving.</div>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">🚀</div>
+            <div class="value-title">Speed to Results</div>
+            <div class="value-desc">I run lean, fast sprints. No 6-week onboarding. I'm typically launching optimized campaigns within the first 7 days.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BY THE NUMBERS -->
+<section style="background: var(--dark-2);">
+  <div class="container">
+    <div class="section-header center">
+      <div class="section-badge reveal">📊 Numbers</div>
+      <h2 class="section-title reveal delay-1">By The <span>Numbers</span></h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem;" class="reveal">
+      <div style="text-align: center; padding: 40px 24px; background: var(--dark-3); border-radius: var(--radius-lg); border: 1px solid var(--glass-border);">
+        <div class="experience-number" data-counter data-target="6" data-suffix="+">0+</div>
+        <div style="color: var(--text-muted); font-size: 0.82rem; margin-top: 6px; text-transform: uppercase; letter-spacing: 0.5px;">Years Experience</div>
+      </div>
+      <div style="text-align: center; padding: 40px 24px; background: var(--dark-3); border-radius: var(--radius-lg); border: 1px solid var(--glass-border);">
+        <div style="font-size: 4rem; font-weight: 900; color: #22C55E; line-height: 1;" data-counter data-target="150" data-suffix="+">0+</div>
+        <div style="color: var(--text-muted); font-size: 0.82rem; margin-top: 6px; text-transform: uppercase; letter-spacing: 0.5px;">Clients Served</div>
+      </div>
+      <div style="text-align: center; padding: 40px 24px; background: var(--dark-3); border-radius: var(--radius-lg); border: 1px solid var(--glass-border);">
+        <div style="font-size: 4rem; font-weight: 900; color: #A78BFA; line-height: 1;" data-counter data-target="500" data-suffix="+">0+</div>
+        <div style="color: var(--text-muted); font-size: 0.82rem; margin-top: 6px; text-transform: uppercase; letter-spacing: 0.5px;">Campaigns Launched</div>
+      </div>
+      <div style="text-align: center; padding: 40px 24px; background: var(--dark-3); border-radius: var(--radius-lg); border: 1px solid var(--glass-border);">
+        <div style="font-size: 4rem; font-weight: 900; color: var(--accent); line-height: 1;" data-counter data-target="98" data-suffix="%">0%</div>
+        <div style="color: var(--text-muted); font-size: 0.82rem; margin-top: 6px; text-transform: uppercase; letter-spacing: 0.5px;">Client Retention</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section>
+  <div class="container">
+    <div class="cta-section reveal">
+      <h2 class="cta-title">Let's Work <span class="animated-gradient">Together</span></h2>
+      <p class="cta-subtitle">I'm selectively taking on new clients. Book a free strategy call to see if we're a good fit.</p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="contact.html" class="btn-primary">📅 Book Free Strategy Call</a>
+        <a href="portfolio.html" class="btn-secondary">📊 View My Results</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">Alex Morgan.</div>
+        <p class="footer-tagline">META Ads specialist helping ecommerce brands turn ad spend into scalable revenue.</p>
+      </div>
+      <div><div class="footer-heading">Navigation</div><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><div class="footer-heading">Services</div><ul class="footer-links"><li><a href="services.html">META Ads Management</a></li><li><a href="services.html">ROAS Optimization</a></li><li><a href="services.html">Creative Strategy</a></li></ul></div>
+      <div class="footer-newsletter"><div class="footer-heading">Newsletter</div><p>Get META ads tips every Tuesday.</p><form class="newsletter-form" onsubmit="return false;"><input type="email" class="newsletter-input" placeholder="your@email.com" /><button class="newsletter-btn" type="submit">→</button></form></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Alex Morgan. All rights reserved.</span><span>Built for performance.</span></div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/content-loader.js"></script>
+</body>
+</html>

@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case Study: LuxeSkin Co. — 4.6x ROAS in 90 Days | Alex Morgan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <style>
+    .case-hero-section {
+      padding: calc(var(--nav-height) + 80px) 5% 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .case-hero-glow {
+      position: absolute;
+      width: 800px; height: 500px;
+      background: radial-gradient(ellipse, rgba(255, 107, 157, 0.12) 0%, transparent 70%);
+      top: 0; left: 50%; transform: translateX(-50%);
+      pointer-events: none;
+    }
+    .case-tag { background: rgba(255,107,157,0.15); color: #F472B6; border: 1px solid rgba(255,107,157,0.3); }
+    .before-after-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .before-card { background: rgba(239,68,68,0.05); border: 1px solid rgba(239,68,68,0.2); border-radius: var(--radius-lg); padding: 32px; }
+    .after-card { background: rgba(34,197,94,0.05); border: 1px solid rgba(34,197,94,0.2); border-radius: var(--radius-lg); padding: 32px; }
+    .ba-title { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1.5rem; }
+    .before-card .ba-title { color: #EF4444; }
+    .after-card .ba-title { color: #22C55E; }
+    .ba-metric { margin-bottom: 1rem; }
+    .ba-label { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 4px; }
+    .ba-value { font-size: 1.5rem; font-weight: 800; }
+    .before-card .ba-value { color: #EF4444; }
+    .after-card .ba-value { color: #22C55E; }
+    .insights-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
+    .insight-card { background: var(--dark-3); border: 1px solid var(--glass-border); border-radius: var(--radius); padding: 24px; }
+    .insight-icon { font-size: 1.8rem; margin-bottom: 12px; }
+    .insight-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 6px; }
+    .insight-text { font-size: 0.83rem; color: var(--text-secondary); line-height: 1.6; }
+    .other-cases-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .other-case-card { background: var(--dark-3); border: 1px solid var(--glass-border); border-radius: var(--radius-lg); padding: 28px; transition: var(--transition); cursor: pointer; }
+    .other-case-card:hover { border-color: rgba(6,104,225,0.3); transform: translateY(-4px); box-shadow: var(--shadow-glow); }
+    .oc-thumb { font-size: 3rem; margin-bottom: 1rem; }
+    .oc-cat { font-size: 0.72rem; font-weight: 600; color: var(--primary-light); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+    .oc-title { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+    .oc-roas { font-size: 1.5rem; font-weight: 900; color: #22C55E; }
+    .quote-block { background: rgba(6,104,225,0.05); border-left: 4px solid var(--primary); border-radius: 0 var(--radius) var(--radius) 0; padding: 28px 32px; margin: 2rem 0; }
+    .quote-block p { font-size: 1.1rem; color: var(--text-primary); line-height: 1.8; font-style: italic; margin-bottom: 12px; }
+    .quote-block cite { font-size: 0.85rem; color: var(--text-muted); font-style: normal; font-weight: 600; }
+    .step-detail { background: var(--dark-3); border: 1px solid var(--glass-border); border-radius: var(--radius-lg); padding: 28px; margin-bottom: 1rem; }
+    .step-detail-header { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
+    .step-detail-num { width: 40px; height: 40px; border-radius: 50%; background: var(--gradient-1); display: flex; align-items: center; justify-content: center; font-size: 0.9rem; font-weight: 800; color: #fff; flex-shrink: 0; }
+    .step-detail-title { font-size: 1.05rem; font-weight: 700; }
+    .step-detail-desc { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.8; }
+    @media (max-width: 768px) { .before-after-grid { grid-template-columns: 1fr; } .case-results-grid { grid-template-columns: repeat(2,1fr); } }
+  </style>
+</head>
+<body>
+
+<div id="pageLoader" class="page-loader">
+  <div class="loader-logo">AM.</div>
+  <div class="loader-bar-wrapper"><div class="loader-bar"></div></div>
+</div>
+<div id="cursorDot" class="cursor-dot"></div>
+<div id="cursorRing" class="cursor-ring"></div>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">AM<span>.</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="case-study.html" class="active">Case Studies</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="nav-cta">Let's Talk</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- CASE HERO -->
+<section class="case-hero-section">
+  <div class="case-hero-glow"></div>
+  <div class="particles-bg"></div>
+  <div class="container">
+    <!-- Breadcrumb -->
+    <div style="display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: var(--text-muted); margin-bottom: 2rem;" class="hero-animate-1">
+      <a href="portfolio.html" style="color: var(--primary-light); font-weight: 600;">← Portfolio</a>
+      <span>/</span>
+      <span>LuxeSkin Co. Case Study</span>
+    </div>
+
+    <div class="hero-animate-2" style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 1.5rem;">
+      <span class="tag-chip case-tag">Beauty & Skincare</span>
+      <span class="tag-chip blue">Facebook Ads</span>
+      <span class="tag-chip purple">Instagram Ads</span>
+      <span class="tag-chip green">Ecommerce</span>
+    </div>
+
+    <h1 class="case-title-large hero-animate-3">
+      How LuxeSkin Co.<br>Went from <span style="color: #EF4444;">1.3x</span> to <span class="animated-gradient">4.6x ROAS</span><br>in 90 Days
+    </h1>
+
+    <div class="case-meta hero-animate-4">
+      <div class="case-meta-item">
+        <span class="case-meta-label">Client</span>
+        <span class="case-meta-value">LuxeSkin Co.</span>
+      </div>
+      <div class="case-meta-item">
+        <span class="case-meta-label">Industry</span>
+        <span class="case-meta-value">DTC Skincare</span>
+      </div>
+      <div class="case-meta-item">
+        <span class="case-meta-label">Duration</span>
+        <span class="case-meta-value">90 Days</span>
+      </div>
+      <div class="case-meta-item">
+        <span class="case-meta-label">Ad Spend</span>
+        <span class="case-meta-value">$30K/month</span>
+      </div>
+      <div class="case-meta-item">
+        <span class="case-meta-label">Platform</span>
+        <span class="case-meta-value">META (FB + IG)</span>
+      </div>
+    </div>
+
+    <!-- Key Results -->
+    <div class="case-results-grid hero-animate-5">
+      <div class="result-box">
+        <div class="result-number" style="color: #22C55E;" data-target="4.6" data-suffix="x" data-prefix="">4.6x</div>
+        <div class="result-label">Final ROAS</div>
+      </div>
+      <div class="result-box">
+        <div class="result-number" style="color: var(--primary-light);" data-target="120" data-suffix="K" data-prefix="$">$120K</div>
+        <div class="result-label">Monthly Revenue</div>
+      </div>
+      <div class="result-box">
+        <div class="result-number" style="color: #EF4444;" data-target="72" data-suffix="%" data-prefix="-">-72%</div>
+        <div class="result-label">CPA Reduction</div>
+      </div>
+      <div class="result-box">
+        <div class="result-number" style="color: var(--accent);" data-target="287" data-suffix="%" data-prefix="+">+287%</div>
+        <div class="result-label">Revenue Growth</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CASE CONTENT -->
+<section>
+  <div class="container">
+    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 4rem; align-items: start;">
+
+      <!-- Main Content -->
+      <div>
+
+        <!-- Overview -->
+        <div class="case-content-section" style="max-width: 100%; padding: 0 0 3rem;">
+          <div class="section-badge reveal" style="margin-bottom: 1.5rem;">📋 The Situation</div>
+          <h2 class="case-section-title reveal delay-1">The Challenge</h2>
+          <p class="case-text reveal delay-2">LuxeSkin Co. is a DTC skincare brand selling premium serums and moisturizers online. When they came to me in January 2025, they had been running META ads for 8 months with dismal results — spending $30,000/month and generating just $39,000 in monthly revenue, a 1.3x ROAS that barely covered ad costs, let alone product, shipping, and overhead.</p>
+          <p class="case-text reveal delay-3">The founder, Emma, had worked with two other agencies before me. Both had promised ROAS improvement but delivered the same stagnant results. She was on the verge of shutting down the META ads channel entirely and going back to organic social.</p>
+
+          <div class="before-after-grid reveal" style="margin: 2rem 0;">
+            <div class="before-card">
+              <div class="ba-title">❌ Before</div>
+              <div class="ba-metric">
+                <div class="ba-label">ROAS</div>
+                <div class="ba-value">1.3x</div>
+              </div>
+              <div class="ba-metric">
+                <div class="ba-label">Monthly Revenue</div>
+                <div class="ba-value">$39K</div>
+              </div>
+              <div class="ba-metric">
+                <div class="ba-label">Cost Per Purchase</div>
+                <div class="ba-value">$84</div>
+              </div>
+              <div class="ba-metric">
+                <div class="ba-label">CTR</div>
+                <div class="ba-value">0.8%</div>
+              </div>
+            </div>
+            <div class="after-card">
+              <div class="ba-title">✅ After 90 Days</div>
+              <div class="ba-metric">
+                <div class="ba-label">ROAS</div>
+                <div class="ba-value">4.6x</div>
+              </div>
+              <div class="ba-metric">
+                <div class="ba-label">Monthly Revenue</div>
+                <div class="ba-value">$120K</div>
+              </div>
+              <div class="ba-metric">
+                <div class="ba-label">Cost Per Purchase</div>
+                <div class="ba-value">$23</div>
+              </div>
+              <div class="ba-metric">
+                <div class="ba-label">CTR</div>
+                <div class="ba-value">3.7%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Root Cause Analysis -->
+        <div style="padding: 0 0 3rem;" class="reveal">
+          <div class="section-badge" style="margin-bottom: 1.5rem;">🔍 What I Found</div>
+          <h2 class="case-section-title">The Root Problems</h2>
+          <p class="case-text">Before touching a single campaign, I spent 5 days doing a full audit. What I found were 4 critical issues killing their performance:</p>
+
+          <div class="insights-grid" style="margin: 1.5rem 0;">
+            <div class="insight-card">
+              <div class="insight-icon">🏗️</div>
+              <div class="insight-title">Broken Campaign Structure</div>
+              <div class="insight-text">23 active campaigns with overlapping audiences causing internal auction competition and bloated CPMs.</div>
+            </div>
+            <div class="insight-card">
+              <div class="insight-icon">🎨</div>
+              <div class="insight-title">Stale, Generic Creative</div>
+              <div class="insight-text">Every ad used the same lifestyle imagery with product shots. No UGC, no authentic hooks, and no creative rotation in 6 months.</div>
+            </div>
+            <div class="insight-card">
+              <div class="insight-icon">👥</div>
+              <div class="insight-title">Wrong Audience Targeting</div>
+              <div class="insight-text">Targeting interest-based audiences that were far too broad and not aligned with the product's true buyer persona.</div>
+            </div>
+            <div class="insight-card">
+              <div class="insight-icon">📊</div>
+              <div class="insight-title">No Attribution Model</div>
+              <div class="insight-text">Optimizing on last-click conversions, missing 40% of actual sales driven by META. ROAS was understated in reality.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- The Strategy -->
+        <div style="padding: 0 0 3rem;" class="reveal">
+          <div class="section-badge" style="margin-bottom: 1.5rem;">🗺️ The Plan</div>
+          <h2 class="case-section-title">The Strategy</h2>
+          <p class="case-text">I implemented a complete overhaul in three phases over 90 days:</p>
+
+          <div style="display: flex; flex-direction: column; gap: 1rem; margin: 1.5rem 0;">
+            <div class="step-detail">
+              <div class="step-detail-header">
+                <div class="step-detail-num">1</div>
+                <div class="step-detail-title">Account Architecture Rebuild (Days 1–14)</div>
+              </div>
+              <div class="step-detail-desc">Consolidated 23 campaigns into 4 clean campaigns following the CBO (Campaign Budget Optimization) structure. Created clear TOFU, MOFU, and BOFU campaign tiers with non-overlapping audience exclusions. This alone reduced CPMs by 35% within 2 weeks.</div>
+            </div>
+
+            <div class="step-detail">
+              <div class="step-detail-header">
+                <div class="step-detail-num">2</div>
+                <div class="step-detail-title">UGC Creative Testing Sprint (Days 7–45)</div>
+              </div>
+              <div class="step-detail-desc">Worked with 6 UGC creators to produce 18 authentic testimonial-style video ads. Ran a structured creative testing matrix testing: hook variations (problem-aware vs. aspirational), video length (15s, 30s, 60s), and CTA placement. Found the winning formula: 30-second problem/solution UGC video with overlay text hooks.</div>
+            </div>
+
+            <div class="step-detail">
+              <div class="step-detail-header">
+                <div class="step-detail-num">3</div>
+                <div class="step-detail-title">Audience Strategy Overhaul (Days 14–30)</div>
+              </div>
+              <div class="step-detail-desc">Scrapped interest targeting in favor of: Advantage+ audiences for prospecting, 1% LTV-based Lookalike audiences from top 30-day purchasers, and layered retargeting segments (website visitors → product viewers → add-to-cart → abandoners). Each segment got unique creative tailored to their stage.</div>
+            </div>
+
+            <div class="step-detail">
+              <div class="step-detail-header">
+                <div class="step-detail-num">4</div>
+                <div class="step-detail-title">Scale + Attribution Fix (Days 30–90)</div>
+              </div>
+              <div class="step-detail-desc">Installed Triple Whale for multi-touch attribution, revealing META was actually responsible for 40% more revenue than last-click showed. With true ROAS data, we confidently scaled daily budget from $1K to $4K on winning campaigns. Revenue compounded monthly as data improved targeting models.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Client Quote -->
+        <div class="quote-block reveal">
+          <p>"Alex didn't just run ads — he rebuilt our entire marketing engine. I was ready to give up on Facebook ads entirely. Now it's our #1 revenue channel. The difference was strategy, not just tactics."</p>
+          <cite>— Emma L., Founder & CEO, LuxeSkin Co.</cite>
+        </div>
+
+        <!-- Results Breakdown -->
+        <div style="padding: 2rem 0;" class="reveal">
+          <div class="section-badge" style="margin-bottom: 1.5rem;">📊 Results</div>
+          <h2 class="case-section-title">Month-by-Month Breakdown</h2>
+
+          <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 1.5rem;">
+            <div style="display: grid; grid-template-columns: 100px 1fr 80px; gap: 12px; align-items: center; padding: 16px; background: var(--dark-3); border-radius: var(--radius); border: 1px solid var(--glass-border);">
+              <span style="font-size: 0.85rem; font-weight: 700;">Month 1</span>
+              <div style="height: 8px; background: var(--dark-4); border-radius: 4px; overflow: hidden;"><div style="height: 100%; width: 42%; background: linear-gradient(90deg, #EF4444, #F97316); border-radius: 4px;"></div></div>
+              <span style="font-size: 0.85rem; font-weight: 700; color: #F97316; text-align: right;">2.1x ROAS</span>
+            </div>
+            <div style="display: grid; grid-template-columns: 100px 1fr 80px; gap: 12px; align-items: center; padding: 16px; background: var(--dark-3); border-radius: var(--radius); border: 1px solid var(--glass-border);">
+              <span style="font-size: 0.85rem; font-weight: 700;">Month 2</span>
+              <div style="height: 8px; background: var(--dark-4); border-radius: 4px; overflow: hidden;"><div style="height: 100%; width: 69%; background: linear-gradient(90deg, var(--primary), #A78BFA); border-radius: 4px;"></div></div>
+              <span style="font-size: 0.85rem; font-weight: 700; color: var(--primary-light); text-align: right;">3.4x ROAS</span>
+            </div>
+            <div style="display: grid; grid-template-columns: 100px 1fr 80px; gap: 12px; align-items: center; padding: 16px; background: var(--dark-3); border-radius: var(--radius); border: 1px solid rgba(34,197,94,0.3);">
+              <span style="font-size: 0.85rem; font-weight: 700;">Month 3</span>
+              <div style="height: 8px; background: var(--dark-4); border-radius: 4px; overflow: hidden;"><div style="height: 100%; width: 92%; background: linear-gradient(90deg, #22C55E, #4ADE80); border-radius: 4px;"></div></div>
+              <span style="font-size: 0.85rem; font-weight: 800; color: #22C55E; text-align: right;">4.6x ROAS ⭐</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Key Learnings -->
+        <div style="padding: 0 0 2rem;" class="reveal">
+          <h2 class="case-section-title">Key Learnings</h2>
+          <ul class="case-list">
+            <li>UGC outperformed polished brand creative by 3.2x on CTR and 2.8x on ROAS across every test</li>
+            <li>Audience consolidation reduced CPA by 35% before any creative changes were made</li>
+            <li>Attribution fixing revealed 40% more META-attributed revenue — the ROAS was never as bad as it looked</li>
+            <li>Advantage+ Shopping audiences matched or outperformed manually built Lookalikes at scale</li>
+            <li>Retargeting sequences with tailored creative per stage (visit/cart/checkout) reduced CPA by 61%</li>
+            <li>Daily budget scaling of maximum 20% per 48 hours avoided algorithm resets and maintained efficiency</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Sidebar -->
+      <div style="position: sticky; top: 100px;">
+        <div style="background: var(--dark-3); border: 1px solid var(--glass-border); border-radius: var(--radius-lg); padding: 28px; margin-bottom: 1.5rem;" class="reveal">
+          <div style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 1.5rem;">Quick Stats</div>
+          <div style="display: flex; flex-direction: column; gap: 1rem;">
+            <div style="display: flex; justify-content: space-between; padding-bottom: 12px; border-bottom: 1px solid var(--glass-border);">
+              <span style="font-size: 0.85rem; color: var(--text-secondary);">ROAS Improvement</span>
+              <span style="font-weight: 700; color: #22C55E;">1.3x → 4.6x</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; padding-bottom: 12px; border-bottom: 1px solid var(--glass-border);">
+              <span style="font-size: 0.85rem; color: var(--text-secondary);">Revenue Growth</span>
+              <span style="font-weight: 700; color: var(--primary-light);">+287%</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; padding-bottom: 12px; border-bottom: 1px solid var(--glass-border);">
+              <span style="font-size: 0.85rem; color: var(--text-secondary);">CPA Reduction</span>
+              <span style="font-weight: 700; color: #F472B6;">-72%</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; padding-bottom: 12px; border-bottom: 1px solid var(--glass-border);">
+              <span style="font-size: 0.85rem; color: var(--text-secondary);">CTR Increase</span>
+              <span style="font-weight: 700; color: var(--accent);">0.8% → 3.7%</span>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+              <span style="font-size: 0.85rem; color: var(--text-secondary);">Time to Results</span>
+              <span style="font-weight: 700;">90 Days</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="background: linear-gradient(135deg, rgba(6,104,225,0.1), rgba(124,58,237,0.1)); border: 1px solid rgba(6,104,225,0.25); border-radius: var(--radius-lg); padding: 28px;" class="reveal delay-2">
+          <div style="font-size: 1.1rem; font-weight: 800; margin-bottom: 0.75rem;">Want Results Like This?</div>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.5rem;">Book a free strategy call. I'll audit your current campaigns and show you exactly where the opportunity is.</p>
+          <a href="contact.html" class="btn-primary" style="display: block; text-align: center;">Book Free Audit →</a>
+        </div>
+
+        <div style="background: var(--dark-3); border: 1px solid var(--glass-border); border-radius: var(--radius-lg); padding: 28px; margin-top: 1.5rem;" class="reveal delay-3">
+          <div style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 1rem;">Tools Used</div>
+          <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+            <span class="tag-chip blue">META Ads Manager</span>
+            <span class="tag-chip purple">Advantage+</span>
+            <span class="tag-chip green">Triple Whale</span>
+            <span class="tag-chip gold">Shopify</span>
+            <span class="tag-chip pink">UGC Creative</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- OTHER CASE STUDIES -->
+<section style="background: var(--dark-2);">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge reveal">📂 More Results</div>
+      <h2 class="section-title reveal delay-1">Other <span>Case Studies</span></h2>
+    </div>
+    <div class="other-cases-grid">
+      <a href="case-study.html" class="other-case-card reveal delay-1" style="display: block;">
+        <div class="oc-thumb">💪</div>
+        <div class="oc-cat">Fitness & Sports</div>
+        <div class="oc-title">FitGear Pro — Video Creative Scale</div>
+        <div class="oc-roas">5.1x ROAS</div>
+        <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 4px;">+312% Revenue · 6 Months</div>
+      </a>
+      <a href="case-study.html" class="other-case-card reveal delay-2" style="display: block;">
+        <div class="oc-thumb">👗</div>
+        <div class="oc-cat">Fashion & Apparel</div>
+        <div class="oc-title">Urban Thread — Catalog Ad Overhaul</div>
+        <div class="oc-roas">3.7x ROAS</div>
+        <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 4px;">-58% CPA · 60 Days</div>
+      </a>
+      <a href="case-study.html" class="other-case-card reveal delay-3" style="display: block;">
+        <div class="oc-thumb">💊</div>
+        <div class="oc-cat">Health & Wellness</div>
+        <div class="oc-title">VitaCore — UGC Supplement Scale</div>
+        <div class="oc-roas">4.2x ROAS</div>
+        <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 4px;">+287% Orders · 90 Days</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section>
+  <div class="container">
+    <div class="cta-section reveal">
+      <h2 class="cta-title">Ready for Your Own <span class="animated-gradient">Transformation?</span></h2>
+      <p class="cta-subtitle">Every brand in this portfolio started exactly where you are. The difference is the strategy. Let's build yours.</p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="contact.html" class="btn-primary">🚀 Start Your Growth Story</a>
+        <a href="portfolio.html" class="btn-secondary">📊 Browse All Results</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">Alex Morgan.</div>
+        <p class="footer-tagline">META Ads specialist helping ecommerce brands turn ad spend into scalable revenue.</p>
+      </div>
+      <div><div class="footer-heading">Navigation</div><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><div class="footer-heading">Services</div><ul class="footer-links"><li><a href="services.html">META Ads Management</a></li><li><a href="services.html">ROAS Optimization</a></li><li><a href="services.html">Creative Strategy</a></li></ul></div>
+      <div class="footer-newsletter"><div class="footer-heading">Newsletter</div><p>Get META ads tips every Tuesday.</p><form class="newsletter-form" onsubmit="return false;"><input type="email" class="newsletter-input" placeholder="your@email.com" /><button class="newsletter-btn" type="submit">→</button></form></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Alex Morgan. All rights reserved.</span><span>Built for performance.</span></div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/content-loader.js"></script>
+</body>
+</html>
