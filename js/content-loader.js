@@ -293,6 +293,40 @@
       }
     }
 
+    // ── Services Page ────────────────────────────────────────────────
+    if (C.servicesPage) {
+      const sp = C.servicesPage;
+      setText('[data-cms="sp.heroTitleLine1"]', sp.heroTitleLine1);
+      setText('[data-cms="sp.heroTitleLine2"]', sp.heroTitleLine2);
+      setText('[data-cms="sp.heroSubtitle"]', sp.heroSubtitle);
+      if (sp.heroCta) {
+        document.querySelectorAll('[data-cms="sp.heroCta"]').forEach(el => {
+          el.textContent = sp.heroCta;
+          if (sp.heroCtaLink) el.href = sp.heroCtaLink;
+        });
+      }
+      setText('[data-cms="sp.ctaTitleLine1"]', sp.ctaTitleLine1);
+      setText('[data-cms="sp.ctaTitleLine2"]', sp.ctaTitleLine2);
+      setText('[data-cms="sp.ctaSubtitle"]', sp.ctaSubtitle);
+      if (sp.ctaButtonText) {
+        document.querySelectorAll('[data-cms="sp.ctaButton"]').forEach(el => {
+          el.textContent = sp.ctaButtonText;
+          if (sp.ctaButtonLink) el.href = sp.ctaButtonLink;
+        });
+      }
+      const faqContainer = document.querySelector('[data-cms-list="sp.faq"]');
+      if (faqContainer && sp.faq && sp.faq.length) {
+        faqContainer.innerHTML = sp.faq.map(f => `
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              ${f.question}
+              <span class="faq-arrow">+</span>
+            </button>
+            <div class="faq-answer">${f.answer}</div>
+          </div>`).join('');
+      }
+    }
+
     // ── Pricing ──────────────────────────────────────────────────────
     const pricingContainer = document.querySelector('[data-cms-list="pricing"]');
     if (pricingContainer && C.pricing) {

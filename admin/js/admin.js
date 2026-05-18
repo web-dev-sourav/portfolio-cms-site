@@ -408,28 +408,114 @@ function renderServicesArray(container) {
   container.appendChild(addBtn);
 }
 
-function removeService(i) { C.services.splice(i, 1); markDirty(); renderServicesArray(document.getElementById('servicesArray')); }
+function removeService(i) {
+  C.services.splice(i, 1);
+  markDirty();
+  const container = document.getElementById('servicesArray') || document.getElementById('spServicesArray');
+  if (container) renderServicesArray(container);
+}
 
-// ── SERVICES PAGE (services + pricing combined) ────────────────────────
+// ── SERVICES PAGE ─────────────────────────────────────────────────────
 function renderServicesPage(el) {
+  const sp = C.servicesPage || {};
   el.innerHTML = `
-    <div class="section-head"><h2>Services Page</h2><p>Edit the service cards and pricing plans shown on the Services page.</p></div>
+    <div class="section-head"><h2>Services Page</h2><p>Edit all content on the Services page — hero, FAQ, CTA, service cards, and pricing.</p></div>
     <div class="tab-bar">
-      <button class="tab-btn active" onclick="switchTab(this,'sptab-services')">⚡ Service Cards</button>
+      <button class="tab-btn active" onclick="switchTab(this,'sptab-content')">📝 Page Content</button>
+      <button class="tab-btn" onclick="switchTab(this,'sptab-services')">⚡ Service Cards</button>
       <button class="tab-btn" onclick="switchTab(this,'sptab-pricing')">💰 Pricing Plans</button>
     </div>
-    <div id="sptab-services" class="tab-content active">
+
+    <div id="sptab-content" class="tab-content active">
+      <div class="card">
+        <div class="card-header"><div class="card-title">Page Hero</div></div>
+        ${field('Hero Title Line 1 (white text)','servicesPage.heroTitleLine1', sp.heroTitleLine1)}
+        ${field('Hero Title Line 2 (gradient text)','servicesPage.heroTitleLine2', sp.heroTitleLine2)}
+        ${textarea('Hero Subtitle','servicesPage.heroSubtitle', sp.heroSubtitle)}
+        <div class="field-grid">
+          ${field('CTA Button Text','servicesPage.heroCta', sp.heroCta)}
+          ${field('CTA Button Link','servicesPage.heroCtaLink', sp.heroCtaLink)}
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header"><div class="card-title">FAQ Section</div><div class="card-action" onclick="addFaq()">+ Add Question</div></div>
+        <div id="spFaqArray" class="array-editor"></div>
+      </div>
+      <div class="card">
+        <div class="card-header"><div class="card-title">Bottom CTA Section</div></div>
+        <div class="field-grid">
+          ${field('CTA Title (before gradient)','servicesPage.ctaTitleLine1', sp.ctaTitleLine1)}
+          ${field('CTA Title (gradient text)','servicesPage.ctaTitleLine2', sp.ctaTitleLine2)}
+        </div>
+        ${textarea('CTA Subtitle','servicesPage.ctaSubtitle', sp.ctaSubtitle)}
+        <div class="field-grid">
+          ${field('CTA Button Text','servicesPage.ctaButtonText', sp.ctaButtonText)}
+          ${field('CTA Button Link','servicesPage.ctaButtonLink', sp.ctaButtonLink)}
+        </div>
+      </div>
+      ${saveBar('servicesPage')}
+    </div>
+
+    <div id="sptab-services" class="tab-content">
       <div class="info-box" style="margin:16px 0 8px;">These cards appear on the Services page and also as a preview on the Homepage.</div>
       <div id="spServicesArray" class="array-editor"></div>
       ${saveBar('services')}
     </div>
+
     <div id="sptab-pricing" class="tab-content">
       <div class="info-box" style="margin:16px 0 8px;">The 3 pricing tiers shown at the bottom of the Services page.</div>
       <div id="spPricingArray" class="array-editor"></div>
       ${saveBar('pricing')}
     </div>`;
+
+  bindFields(el);
+  renderFaqArray(document.getElementById('spFaqArray'));
   renderServicesArray(document.getElementById('spServicesArray'));
   renderPricingArray(document.getElementById('spPricingArray'));
+}
+
+function renderFaqArray(container) {
+  if (!container) return;
+  const faq = (C.servicesPage || {}).faq || [];
+  container.innerHTML = '';
+  faq.forEach((f, i) => {
+    const div = document.createElement('div');
+    div.className = 'array-item';
+    div.innerHTML = `
+      <div class="array-item-header" onclick="toggleItem(this)">
+        <span class="item-icon-preview">❓</span>
+        <span class="item-title-preview">${f.question}</span>
+        <div class="item-controls">
+          <button class="btn btn-sm btn-danger" onclick="event.stopPropagation();removeFaq(${i})">✕</button>
+          <span class="item-toggle-btn">▼</span>
+        </div>
+      </div>
+      <div class="array-item-body">
+        ${field('Question', `servicesPage.faq.${i}.question`, f.question)}
+        ${textarea('Answer', `servicesPage.faq.${i}.answer`, f.answer)}
+      </div>`;
+    container.appendChild(div);
+    div.querySelectorAll('[data-field]').forEach(bindField);
+  });
+  const addBtn = document.createElement('button');
+  addBtn.className = 'add-item-btn';
+  addBtn.innerHTML = '+ Add FAQ Item';
+  addBtn.onclick = () => addFaq();
+  container.appendChild(addBtn);
+}
+
+function addFaq() {
+  if (!C.servicesPage) C.servicesPage = {};
+  if (!C.servicesPage.faq) C.servicesPage.faq = [];
+  C.servicesPage.faq.push({ id: uid(), question: 'New Question', answer: 'Answer here.' });
+  markDirty();
+  renderFaqArray(document.getElementById('spFaqArray'));
+}
+
+function removeFaq(i) {
+  C.servicesPage.faq.splice(i, 1);
+  markDirty();
+  renderFaqArray(document.getElementById('spFaqArray'));
 }
 
 // ── PORTFOLIO ──────────────────────────────────────────────────────────
@@ -641,7 +727,9 @@ function renderFeaturesList(features, pi) {
 
 function addFeature(pi) {
   C.pricing[pi].features.push({ text: 'New feature', included: true });
-  markDirty(); renderPricingArray(document.getElementById('pricingArray'));
+  markDirty();
+  const container = document.getElementById('pricingArray') || document.getElementById('spPricingArray');
+  if (container) renderPricingArray(container);
 }
 
 // ── ABOUT ──────────────────────────────────────────────────────────────
