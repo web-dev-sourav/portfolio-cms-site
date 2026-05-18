@@ -53,9 +53,20 @@
       el.textContent = name + '.';
     });
 
-    // Hero dashboard card avatar
+    // Hero dashboard card avatar — photo if uploaded, else initials
     document.querySelectorAll('.card-avatar').forEach(el => {
-      el.textContent = initials;
+      if (s.profileImage) {
+        el.innerHTML = `<img src="${s.profileImage}" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" alt="${name}" />`;
+      } else {
+        el.textContent = initials;
+      }
+    });
+
+    // About page photo card — photo if uploaded, else keeps emoji
+    document.querySelectorAll('.about-image-card').forEach(el => {
+      if (s.profileImage) {
+        el.innerHTML = `<img src="${s.profileImage}" style="width:100%;height:100%;object-fit:cover;" alt="${name}" />`;
+      }
     });
 
     // Availability badge
