@@ -76,6 +76,7 @@ const revealObserver = new IntersectionObserver((entries) => {
 document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
   revealObserver.observe(el);
 });
+window.revealObserver = revealObserver;
 
 /* ===== ANIMATED COUNTER ===== */
 function animateCounter(el, target, suffix = '', duration = 2000) {

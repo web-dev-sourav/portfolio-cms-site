@@ -318,6 +318,13 @@
         </div>`).join('');
     }
 
+    // Re-observe any CMS-injected elements with reveal animations
+    if (window.revealObserver) {
+      document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
+        window.revealObserver.observe(el);
+      });
+    }
+
     console.log('[CMS] Content loaded successfully');
   }
 })();
