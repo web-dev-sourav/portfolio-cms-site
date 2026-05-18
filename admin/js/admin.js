@@ -147,9 +147,9 @@ function navigate(name) {
   }, 80);
   const titles = {
     dashboard: 'Dashboard', site: 'Site Settings', hero: 'Hero Section',
-    services: 'Services', portfolio: 'Portfolio', testimonials: 'Testimonials',
-    process: 'Process Steps', pricing: 'Pricing Plans', about: 'About Page',
-    contact: 'Contact Info', casestudy: 'Case Study', images: 'Images'
+    services: 'Services', servicespage: 'Services Page', portfolio: 'Portfolio',
+    testimonials: 'Testimonials', process: 'Process Steps', pricing: 'Pricing Plans',
+    about: 'About Page', contact: 'Contact Info', casestudy: 'Case Study', images: 'Images'
   };
   document.getElementById('topbarTitle').textContent = titles[name] || 'Admin';
 }
@@ -159,7 +159,8 @@ function renderSection(name) {
   const area = document.getElementById('contentArea');
   const renderers = {
     dashboard: renderDashboard, site: renderSite, hero: renderHero,
-    services: renderServices, portfolio: renderPortfolio, testimonials: renderTestimonials,
+    services: renderServices, servicespage: renderServicesPage,
+    portfolio: renderPortfolio, testimonials: renderTestimonials,
     process: renderProcess, pricing: renderPricing, about: renderAbout,
     contact: renderContact, casestudy: renderCaseStudy, images: renderImages
   };
@@ -408,6 +409,28 @@ function renderServicesArray(container) {
 }
 
 function removeService(i) { C.services.splice(i, 1); markDirty(); renderServicesArray(document.getElementById('servicesArray')); }
+
+// ── SERVICES PAGE (services + pricing combined) ────────────────────────
+function renderServicesPage(el) {
+  el.innerHTML = `
+    <div class="section-head"><h2>Services Page</h2><p>Edit the service cards and pricing plans shown on the Services page.</p></div>
+    <div class="tab-bar">
+      <button class="tab-btn active" onclick="switchTab(this,'sptab-services')">⚡ Service Cards</button>
+      <button class="tab-btn" onclick="switchTab(this,'sptab-pricing')">💰 Pricing Plans</button>
+    </div>
+    <div id="sptab-services" class="tab-content active">
+      <div class="info-box" style="margin:16px 0 8px;">These cards appear on the Services page and also as a preview on the Homepage.</div>
+      <div id="spServicesArray" class="array-editor"></div>
+      ${saveBar('services')}
+    </div>
+    <div id="sptab-pricing" class="tab-content">
+      <div class="info-box" style="margin:16px 0 8px;">The 3 pricing tiers shown at the bottom of the Services page.</div>
+      <div id="spPricingArray" class="array-editor"></div>
+      ${saveBar('pricing')}
+    </div>`;
+  renderServicesArray(document.getElementById('spServicesArray'));
+  renderPricingArray(document.getElementById('spPricingArray'));
+}
 
 // ── PORTFOLIO ──────────────────────────────────────────────────────────
 function renderPortfolio(el) {

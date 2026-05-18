@@ -33,8 +33,9 @@
     setText('[data-cms="site.copyrightText"]', s.copyrightText);
     setText('[data-cms="site.footerTagline"]', s.footerTagline);
 
-    // Page loader logo
+    // Page loader logo — save to localStorage so next visit shows instantly
     const initials = s.initials || 'AM';
+    try { localStorage.setItem('cms_initials', initials); } catch(_) {}
     document.querySelectorAll('.loader-logo').forEach(el => {
       el.textContent = initials + '.';
     });

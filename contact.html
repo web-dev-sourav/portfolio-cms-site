@@ -38,7 +38,8 @@
 <body>
 
 <div id="pageLoader" class="page-loader">
-  <div class="loader-logo">AM.</div>
+  <div class="loader-logo" id="loaderLogo">.</div>
+<script>(function(){var i=localStorage.getItem("cms_initials");if(i){var el=document.getElementById("loaderLogo");if(el)el.textContent=i+".";}})();</script>
   <div class="loader-bar-wrapper"><div class="loader-bar"></div></div>
 </div>
 <div id="cursorDot" class="cursor-dot"></div>
