@@ -141,7 +141,10 @@ function navigate(name) {
   document.querySelectorAll('.nav-item').forEach(el => el.classList.toggle('active', el.dataset.section === name));
   const area = document.getElementById('contentArea');
   area.innerHTML = '<div class="loading-spinner"><div class="spinner"></div></div>';
-  setTimeout(() => { renderSection(name); }, 80);
+  setTimeout(() => {
+    try { renderSection(name); }
+    catch(e) { area.innerHTML = `<div style="padding:40px;color:#ef4444;">⚠️ Failed to load section: ${e.message}<br><small style="opacity:.6">${e.stack}</small></div>`; }
+  }, 80);
   const titles = {
     dashboard: 'Dashboard', site: 'Site Settings', hero: 'Hero Section',
     services: 'Services', portfolio: 'Portfolio', testimonials: 'Testimonials',
